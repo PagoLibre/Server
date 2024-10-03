@@ -1,0 +1,1046 @@
+
+/*
+* 
+* ==========================================================
+* CLIENT.SCSS
+* ==========================================================
+*
+* Client side SCSS file
+*
+*/
+
+@import "shared.scss";
+
+.pagoL-main {
+    max-width: 600px;
+    font-size: 15px;
+    text-align: left;
+
+    .pagoL-btn, .pagoL-btn.pagoL-btn-border {
+        line-height: 32px;
+        height: 31px;
+    }
+
+    > div {
+        margin-top: 0 !important;
+    }
+
+    .pagoL-input {
+        span {
+            border: 1px solid #d4d4d4;
+            line-height: 42px;
+            padding-left: 15px;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            height: 40px;
+            min-height: 40px;
+            border-right: none;
+        }
+
+        input, select, textarea {
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+        }
+
+        &.pagoL-input-textarea {
+            align-items: stretch;
+
+            > span {
+                flex: 1;
+                height: auto;
+            }
+
+            textarea {
+                max-width: 100%;
+            }
+        }
+
+        &.pagoL-input-checkbox {
+            justify-content: start;
+
+            span {
+                max-width: 150px;
+            }
+        }
+    }
+
+    &:not([data-price]) .pagoL-vat {
+        display: none;
+    }
+
+    .pagoL-text .pagoL-link {
+        &:not(:hover) {
+            text-decoration: none;
+        }
+
+        color: #5c7171;
+    }
+}
+
+.pagoL-main, .pagoL-box {
+    ::placeholder {
+        color: #9eacac;
+    }
+}
+
+body.pagoL-loading {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+
+    > div {
+        display: none;
+    }
+}
+
+.pagoL-box {
+    margin: 0;
+    padding: 0;
+    color: $color-black;
+}
+
+.pagoL-top {
+    max-width: 800px;
+    padding: 30px 20px;
+
+    .pagoL-title {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    & + .pagoL-body {
+        border-top: 1px solid $border-color;
+    }
+}
+
+.pagoL-cancel-transaction {
+    margin-top: 15px;
+}
+
+.pagoL-countdown {
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    position: relative;
+
+    & + .pagoL-btn {
+        margin-left: 15px;
+    }
+
+    &:before, &:after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        left: -30px;
+        top: 50%;
+        border-radius: 50%;
+        margin-top: -5px;
+        background-color: $color-red;
+        animation: pagoL-pulse 1s ease-in-out infinite both;
+        display: none;
+    }
+
+    &:after {
+        width: 30px;
+        height: 30px;
+        margin-top: -15px;
+        left: -40px;
+        animation: pagoL-ping 1s ease-in-out infinite both;
+    }
+
+    &.pagoL-countdown-expiring:before, &.pagoL-countdown-expiring:after {
+        display: block;
+    }
+}
+
+.pagoL-body {
+    padding: 30px 20px;
+
+    .pagoL-title .pagoL-text {
+        font-weight: 400;
+        margin-top: 5px;
+    }
+}
+
+.pagoL-cnt {
+    text-align: center;
+
+    .pagoL-title {
+        display: block;
+    }
+}
+
+.pagoL-amount-fiat {
+    justify-content: center;
+
+    > div {
+        margin: 0 5px;
+    }
+
+    &:not(.pagoL-donation) > div:first-child {
+        display: none;
+    }
+}
+
+.pagoL-donation {
+    text-align: left;
+
+    #user-amount {
+        align-items: center;
+
+        span {
+            margin: 0 0 0 60px;
+            padding-right: 15px;
+        }
+    }
+}
+
+.pagoL-vat {
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+    letter-spacing: .3px;
+
+    &:empty {
+        display: none;
+    }
+}
+
+.pagoL-billing {
+    .pagoL-title-1 {
+        margin-bottom: 30px;
+    }
+
+    .pagoL-title-2 {
+        margin-top: 30px;
+    }
+
+    &.pagoL-hidden {
+        display: none;
+    }
+}
+
+.pagoL-payment-methods-cnt, .pagoL-billing-cnt {
+    align-items: flex-start;
+    padding-top: 30px;
+}
+
+.pagoL-payment-methods-cnt > .pagoL-title, .pagoL-amount-fiat > .pagoL-title {
+    white-space: nowrap;
+}
+
+.pagoL-payment-methods-cnt {
+
+    .pagoL-collapse {
+        > div:first-child {
+            height: 295px;
+        }
+
+        .pagoL-collapse-btn {
+            display: block;
+        }
+    }
+}
+
+.pagoL-checkout-top {
+    .pagoL-text b {
+        font-weight: 500;
+        font-size: 14px;
+    }
+}
+
+.pagoL-payment-methods {
+
+    > div {
+        justify-content: flex-start;
+        padding: 5px 15px 5px 5px;
+        border: 1px solid $border-color;
+        border-radius: 40px;
+        cursor: pointer;
+        text-align: left;
+        transition: $transition;
+
+        img {
+            max-width: 30px;
+        }
+
+        img + span {
+            display: block;
+            padding: 0 10px;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 17px;
+            letter-spacing: .1px;
+            white-space: nowrap;
+        }
+
+        span + span {
+            display: block;
+            font-size: 15px;
+            line-height: 15px;
+            min-width: 40px;
+            margin-left: auto;
+            color: $color-gray;
+            transition: $transition;
+        }
+
+        &:not(.pagoL-hidden) + div {
+            margin-top: 10px;
+        }
+
+        &:hover, &:hover .pagoL-label {
+            border-color: $color-main-hover;
+            color: $color-main;
+
+            span + span {
+                color: $color-main-hover;
+            }
+        }
+    }
+
+    [data-cryptocurrency="stripe"] > img, [data-cryptocurrency="verifone"] > img, [data-cryptocurrency="paypal"] > img {
+        max-width: 74px;
+    }
+
+    .pagoL-label {
+        display: inline;
+        border-color: $border-color;
+        background: $white;
+        z-index: 2;
+        position: relative;
+
+        div {
+            display: inline;
+        }
+    }
+}
+
+.pagoL-pay {
+    display: none;
+    animation: pagoL-fade-in .5s;
+}
+
+.pagoL-pay-cnt {
+    display: none;
+    animation: pagoL-fade-in .5s;
+
+    .pagoL-body {
+        padding: 0;
+
+        > div {
+            padding: 10px 20px;
+            border-top: 1px solid $border-color;
+        }
+
+        > div:first-child {
+            padding: 30px 20px;
+            border-top: none;
+        }
+    }
+
+    .pagoL-top .pagoL-title {
+        align-items: center;
+    }
+
+    .pagoL-cnt {
+        display: none;
+    }
+
+    .pagoL-pay {
+        display: block;
+    }
+}
+
+.pagoL-pay-cnt-active {
+    .pagoL-cnt {
+        display: none;
+    }
+
+    .pagoL-pay-cnt {
+        display: block;
+    }
+}
+
+.pagoL-qrcode {
+    max-width: 130px;
+}
+
+.pagoL-qrcode-text {
+    padding: 0;
+    width: 100%;
+
+    img {
+        max-width: 35px;
+        margin-right: 15px;
+    }
+}
+
+.pagoL-qrcode-link + .pagoL-qrcode-text {
+    padding-left: 30px;
+    width: auto;
+}
+
+.pagoL-pay-address, .pagoL-pay-amount {
+    .pagoL-title {
+        font-weight: 500;
+        font-size: 15px;
+        letter-spacing: .3px;
+        margin: 5px 0 0 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        > div {
+            display: inline-block;
+            color: $color-gray;
+            padding-left: 10px;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 11px;
+        }
+    }
+
+    .pagoL-clipboard {
+        line-height: 37px;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        margin: 0 -7px 0 7px;
+
+        &:before {
+            line-height: 30px;
+        }
+    }
+
+    > div:first-child {
+        overflow: hidden;
+    }
+}
+
+.pagoL-pay-top-back {
+    display: none;
+
+    .pagoL-text {
+        margin-bottom: 15px;
+    }
+}
+
+.pagoL-pay-top-main.pagoL-hidden + .pagoL-pay-top-back {
+    display: block;
+}
+
+.pagoL-tx-cnt {
+    display: none;
+    text-align: center;
+    padding: 60px 0;
+
+    .pagoL-loading {
+        width: 30px;
+        height: 30px;
+        margin: 0 auto 15px auto;
+
+        &:before {
+            line-height: 30px;
+            font-size: 30px;
+            color: $color-main;
+        }
+    }
+
+    .pagoL-flex {
+        justify-content: center;
+        margin-top: 15px;
+        letter-spacing: .3px;
+
+        > div {
+            margin: 0 5px;
+        }
+    }
+}
+
+.pagoL-tx-status {
+    background: $color-main;
+    color: #FFF;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.pagoL-tx-confirmations {
+    font-weight: 500;
+}
+
+.pagoL-tx-cnt-active {
+    .pagoL-tx-cnt {
+        display: block;
+    }
+
+    .pagoL-cnt, .pagoL-pay-cnt {
+        display: none;
+    }
+}
+
+.pagoL-complete-cnt, .pagoL-failed-cnt, .pagoL-underpayment-cnt {
+    display: none;
+    text-align: center;
+    padding: 60px 30px;
+    animation: pagoL-fade-in .5s;
+
+    > i {
+        color: $color-main;
+        font-size: 30px;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+}
+
+.pagoL-failed-cnt, .pagoL-underpayment-cnt {
+    > i {
+        color: $color-red;
+    }
+
+    .pagoL-btn {
+        margin-top: 15px;
+    }
+}
+
+.pagoL-complete-cnt-active, .pagoL-failed-cnt-active, .pagoL-underpayment-cnt-active {
+    .pagoL-cnt {
+        display: none;
+    }
+}
+
+.pagoL-complete-cnt-active {
+    .pagoL-complete-cnt {
+        display: block;
+    }
+}
+
+.pagoL-complete-cnt {
+    .pagoL-order-processing span:first-child {
+        display: none;
+    }
+
+    .pagoL-text:not(.pagoL-order-processing) span:last-child {
+        display: none;
+    }
+
+    .pagoL-link {
+        color: $color-gray;
+        margin-top: 15px;
+        margin-bottom: 5px;
+
+        &:hover {
+            color: $color-main;
+        }
+    }
+}
+
+.pagoL-failed-cnt-active {
+    .pagoL-failed-cnt {
+        display: block;
+    }
+}
+
+.pagoL-underpayment-cnt-active {
+    .pagoL-underpayment-cnt {
+        display: block;
+    }
+}
+
+#pagoL-expired-tx-id {
+    font-weight: 500;
+}
+
+.pagoL-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pagoL-fade-in .5s;
+    z-index: 9999995;
+}
+
+.pagoL-popup-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999991;
+    background-color: rgba(227, 227, 227, .5);
+    animation: pagoL-fade-in .5s;
+}
+
+.pagoL-popup, .pagoL-popup-overlay {
+    &:not(.pagoL-active) {
+        display: none;
+    }
+}
+
+@media (min-width: 429px) {
+    .pagoL-popup {
+        width: 600px;
+    }
+}
+
+.pagoL-btn-popup {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+
+    img {
+        margin: 0 15px 0 0;
+        height: 20px;
+    }
+}
+
+.pagoL-popup-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 10px;
+    opacity: .5;
+    cursor: pointer;
+    z-index: 9;
+    transition: $transition;
+
+    &:hover {
+        color: $color-red;
+        opacity: 1;
+    }
+}
+
+#user-amount {
+    justify-content: flex-end;
+    margin-bottom: 0;
+
+    span {
+        width: auto;
+        min-width: 0;
+        margin-right: 30px;
+    }
+
+    input {
+        min-width: 150px;
+        width: 150px;
+    }
+}
+
+.pagoL-error {
+    margin-bottom: 30px;
+    color: $color-red;
+    font-weight: 500;
+
+    &:empty {
+        display: none;
+    }
+}
+
+[data-pagoL]:empty {
+    min-height: 35px;
+}
+
+.pagoL-billing {
+    position: relative;
+}
+
+.pagoL-billing-cnt.pagoL-flex .pagoL-input + .pagoL-input {
+    margin: 5px 0 0 0 !important;
+}
+
+#pagoL-btn-invoice-close {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    border: none !important;
+    background: none !important;
+
+    &:before {
+        font-size: 12px;
+    }
+}
+
+#pagoL-btn-invoice.pagoL-hidden {
+    display: none;
+}
+
+.pagoL-collapse {
+    > div:first-child {
+        overflow: hidden;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(rgba(64,64,64,0), rgb(255, 255, 255));
+            z-index: 0;
+        }
+    }
+}
+
+.pagoL-collapse-btn {
+    display: none;
+    text-align: center;
+    letter-spacing: .5px;
+    margin-top: 10px;
+
+    i {
+        font-size: 12px;
+        transform: translateY(1px);
+    }
+}
+
+.pagoL-cloud-branding {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: .3px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 13px;
+    color: #000;
+    transition: $transition;
+
+    img {
+        height: 18px;
+        margin-left: 5px;
+    }
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+#metamask, #walletconnect, #metamask.pagoL-loading:before, #walletconnect.pagoL-loading:before {
+    color: #384242;
+}
+
+#metamask {
+    background: rgba(248, 132, 42, .2);
+    display: none;
+
+    &:hover {
+        background: rgba(248, 132, 42, .4);
+    }
+}
+
+#walletconnect {
+    background: rgba(31, 149, 252, .2);
+    display: none;
+
+    img {
+        left: 13px;
+    }
+
+    &:hover {
+        background: rgba(31, 149, 252, .4);
+    }
+}
+
+[data-active="eth"], [data-active="usdt"], [data-active="usdc"], [data-active="link"], [data-active="shib"], [data-active="bat"], [data-custom-token="erc-20"], [data-active="bnb"] {
+    #metamask {
+        display: block;
+    }
+}
+
+.pagoL-background-image {
+    background-position: center center;
+    background-size: cover;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: 1px solid $border-color;
+    height: 300px;
+}
+
+/* 
+
+# SHOP
+==========================================================
+
+*/
+
+.pagoL-user-details, .pagoL-custom-fields {
+    padding-top: 30px;
+
+    .pagoL-title {
+        margin-bottom: 30px;
+    }
+}
+
+#pagoL-discount-field, .pagoL-user-details .pagoL-input, .pagoL-billing-cnt .pagoL-input, .pagoL-custom-fields .pagoL-input {
+    text-align: left;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.pagoL-input-license-key {
+    display: inline-flex;
+    text-align: left;
+    align-items: center;
+    margin-top: 15px;
+
+    span {
+        min-width: 0;
+        width: 190px;
+        white-space: nowrap;
+    }
+
+    input {
+        min-width: 310px;
+        text-align: center;
+    }
+}
+
+#pagoL-discount-field {
+    margin-top: 30px;
+}
+
+/* 
+
+# RTL
+==========================================================
+
+*/
+
+.pagoL-rtl, .pagoL-rtl textarea, .pagoL-rtl input, .pagoL-rtl ul, .pagoL-rtl ul li {
+    direction: rtl;
+    text-align: right;
+}
+
+.pagoL-rtl {
+    .pagoL-payment-methods {
+        padding-left: 0;
+
+        > div {
+            padding: 5px 5px 5px 15px;
+
+            img + span {
+                text-align: right;
+                display: flex;
+            }
+
+            span + span {
+                margin-left: 0;
+                margin-right: auto;
+            }
+        }
+    }
+
+    .pagoL-countdown + .pagoL-btn, .pagoL-btn + .pagoL-btn {
+        margin-right: 15px;
+        margin-left: 0;
+    }
+
+    .pagoL-qrcode-text img {
+        margin-left: 35px;
+        margin-right: 0;
+    }
+
+    .pagoL-countdown:after {
+        left: auto;
+        right: -40px;
+    }
+
+    .pagoL-countdown:before {
+        left: auto;
+        right: -30px;
+    }
+
+    .pagoL-btn-popup img {
+        margin: 0 0 0 15px;
+    }
+
+    .pagoL-btn i {
+        transform: translateY(3px);
+        margin: 0 -5px 0 7px;
+    }
+
+    .pagoL-donation #user-amount span {
+        margin: 0 0 0 10px;
+    }
+}
+
+/* 
+
+# RESPONSIVE
+==========================================================
+
+*/
+
+@media (min-width: 600px) {
+    .pagoL-payment-methods > div img + span {
+        width: 265px;
+    }
+}
+
+@media (max-width: 428px) {
+    .pagoL-main {
+        text-align: center;
+
+        .pagoL-input {
+            display: block;
+
+            span {
+                width: auto;
+                border: 1px solid #d4d4d4;
+                border-bottom: none;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: 4px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+            input, select {
+                border-bottom-left-radius: 4px !important;
+                border-top-right-radius: 0 !important;
+            }
+
+            &.pagoL-input-checkbox span {
+                max-width: none;
+            }
+
+            [type="checkbox"] {
+                width: 100%;
+            }
+        }
+
+        .pagoL-input-btn {
+            .pagoL-btn {
+                width: auto;
+                display: block;
+                margin-left: 0;
+                border-top: none;
+                border-top-right-radius: 0;
+                border-top-left-radius: 0;
+            }
+
+            input {
+                border-bottom-left-radius: 0 !important;
+                border-bottom-right-radius: 0 !important;
+            }
+        }
+    }
+
+    .pagoL-top .pagoL-title, .pagoL-payment-methods-cnt {
+        display: block;
+    }
+
+    .pagoL-amount-fiat {
+        justify-content: center;
+
+        > div {
+            margin: 0 5px;
+        }
+    }
+
+    .pagoL-donation {
+        display: block;
+        text-align: center;
+
+        #user-amount {
+            margin-top: 15px;
+            justify-content: center;
+
+            span {
+                margin: 0 10px 0 0;
+                text-align: right;
+                display: inline-block;
+                flex-grow: 0;
+            }
+        }
+    }
+
+    .pagoL-payment-methods {
+        padding: 0;
+        margin: 0 auto;
+
+        > div {
+            overflow: hidden;
+
+            img + span {
+                max-width: 65%;
+            }
+        }
+
+        .pagoL-label div {
+            display: none;
+        }
+    }
+
+    .pagoL-pay-amount {
+        > .pagoL-flex {
+            display: block;
+        }
+
+        #metamask {
+            margin: 15px 0 0 0;
+        }
+    }
+
+    .pagoL-pay-top-main {
+        .pagoL-title .pagoL-flex {
+            margin-top: 20px;
+            justify-content: center;
+
+            > div {
+                margin: 0 10px;
+            }
+        }
+    }
+
+    .pagoL-pay-cnt .pagoL-body > div:first-child {
+        display: block;
+    }
+
+    .pagoL-qrcode {
+        margin: 0 auto 30px auto;
+    }
+
+    .pagoL-pay-address, .pagoL-pay-amount {
+        display: block;
+        position: relative;
+
+        .pagoL-clipboard {
+            margin: 5px auto 0 auto;
+            display: block;
+        }
+    }
+
+    .pagoL-qrcode-text, .pagoL-pay-address, .pagoL-pay-amount {
+        justify-content: center;
+    }
+
+    .pagoL-qrcode-text {
+        padding-left: 0 !important;
+        display: block;
+
+        img {
+            margin: 0 0 30px 0;
+        }
+    }
+
+    .pagoL-payment-methods-cnt .pagoL-collapse-btn {
+        padding-left: 0 !important;
+    }
+
+    [data-active="eth"], [data-active="usdt"], [data-active="usdc"], [data-active="link"], [data-active="shib"], [data-active="bat"] {
+        #metamask {
+            display: inline-block;
+        }
+    }
+
+    .pagoL-background-image {
+        height: 200px;
+    }
+}

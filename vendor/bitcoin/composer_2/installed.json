@@ -1,0 +1,67 @@
+{
+    "packages": [
+        {
+            "name": "kielabokkie/bitcoin-address-validator",
+            "version": "v2.1.0",
+            "version_normalized": "2.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kielabokkie/bitcoin-address-validator.git",
+                "reference": "95201916cd053387cf25ca3b5a8501ffb1a1a5d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kielabokkie/bitcoin-address-validator/zipball/95201916cd053387cf25ca3b5a8501ffb1a1a5d8",
+                "reference": "95201916cd053387cf25ca3b5a8501ffb1a1a5d8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-bcmath": "*",
+                "php": "^7.3|^7.4|^8.0|^8.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5|^8.0|^9.0"
+            },
+            "time": "2021-12-23T04:41:53+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Kielabokkie\\Bitcoin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "kielabokkie",
+                    "email": "kielabokkie@gmail.com"
+                }
+            ],
+            "description": "Validate legacy, segwit, native segwit (bech32) and taproot Bitcoin addresses",
+            "keywords": [
+                "address",
+                "bech32",
+                "bitcoin",
+                "segwit",
+                "validation",
+                "validator"
+            ],
+            "support": {
+                "issues": "https://github.com/kielabokkie/bitcoin-address-validator/issues",
+                "source": "https://github.com/kielabokkie/bitcoin-address-validator/tree/v2.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/kielabokkie",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../kielabokkie/bitcoin-address-validator"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

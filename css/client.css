@@ -1,0 +1,1422 @@
+/*
+* 
+* ==========================================================
+* CLIENT.SCSS
+* ==========================================================
+*
+* Client side SCSS file
+*
+*/
+/*
+* 
+* ==========================================================
+* SHARED.SCSS
+* ==========================================================
+*
+* File shared by both admin and client
+*
+*/
+/*
+* 
+* ==========================================================
+* ICONS.SCSS
+* ==========================================================
+*
+* Icons file shared by admin and client
+*
+*/
+@font-face {
+  font-family: 'PagoLibre Icons';
+  src: url("../media/fonts/icons.ttf?v1") format("truetype"), url("../media/fonts/icons.woff?v1") format("woff"), url("../media/fonts/icons.svg?v1#PagoLibre-Icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+[class^="pagoL-icon-"]:before,
+[class*=" pagoL-icon-"]:before {
+  font-family: "PagoLibre Icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.pagoL-icon-copy:before {
+  content: "\e90d"; }
+
+.pagoL-icon-back:before {
+  content: "\e90c"; }
+
+.pagoL-icon-search:before {
+  content: "\e90b"; }
+
+.pagoL-icon-shuffle:before {
+  content: "\e904"; }
+
+.pagoL-icon-automation:before {
+  content: "\e905"; }
+
+.pagoL-icon-bar-chart:before {
+  content: "\e906"; }
+
+.pagoL-icon-delete:before {
+  content: "\e907"; }
+
+.pagoL-icon-menu:before {
+  content: "\e908"; }
+
+.pagoL-icon-plus-2:before {
+  content: "\e909"; }
+
+.pagoL-icon-settings:before {
+  content: "\e90a"; }
+
+.pagoL-icon-close:before {
+  content: "\e903"; }
+
+.pagoL-icon-help:before {
+  content: "\e902"; }
+
+.pagoL-icon-check:before {
+  content: "\e901"; }
+
+.pagoL-icon-loader:before {
+  content: "\e900"; }
+
+.pagoL-icon-download:before {
+  content: "\66"; }
+
+.pagoL-icon-clip:before {
+  content: "\65"; }
+
+.pagoL-icon-filters:before {
+  content: "\e90e"; }
+
+.pagoL-icon-arrow-down:before {
+  content: "\61"; }
+
+.pagoL-icon-user:before {
+  content: "\6e"; }
+
+.pagoL-icon-arrow-right:before {
+  content: "\ea3c"; }
+
+.pagoL-icon-arrow-left:before {
+  content: "\ea40"; }
+
+.pagoL-icon-clock:before {
+  content: "\46"; }
+
+.pagoL-icon-calendar:before {
+  content: "\62"; }
+
+.pagoL-icon-image:before {
+  content: "\e90f"; }
+
+@font-face {
+  font-family: "PagoLibre";
+  src: url("../media/fonts/regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: "PagoLibre";
+  src: url("../media/fonts/medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: "PagoLibre";
+  src: url("../media/fonts/bold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal; }
+@keyframes pagoL-loading {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+@keyframes pagoL-fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes pagoL-fade-out {
+  0% {
+    opacity: 1; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes pagoL-fade-bottom {
+  0% {
+    transform: translateY(15px);
+    opacity: 0; }
+  100% {
+    transform: none;
+    opacity: 1; } }
+@keyframes pagoL-fade-bottom-center {
+  0% {
+    transform: translateY(15px) translateX(-50%);
+    opacity: 0; }
+  100% {
+    transform: translateX(-50%);
+    opacity: 1; } }
+@keyframes pagoL-pulse {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.2); }
+  100% {
+    transform: scale(1); } }
+@keyframes pagoL-ping {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.8; }
+  80% {
+    transform: scale(1.2);
+    opacity: 0; }
+  100% {
+    transform: scale(2.2);
+    opacity: 0; } }
+/* 
+
+# GLOBAL
+==========================================================
+
+*/
+.pagoL-main, .pagoL-main input, .pagoL-main select, .pagoL-main textarea, .pagoL-btn, button, .pagoL-box, #pagoL-lightbox {
+  font-family: "PagoLibre", "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+  box-sizing: border-box; }
+
+.pagoL-main * {
+  box-sizing: content-box;
+  outline: none; }
+.pagoL-main input, .pagoL-main input[text], .pagoL-main textarea, .pagoL-main input[email] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+.pagoL-main input:-webkit-autofill, .pagoL-main select:-webkit-autofill {
+  box-shadow: 0 0 0 30px #f5fafa inset !important; }
+.pagoL-main input:-webkit-autofill:focus, .pagoL-main select:-webkit-autofill:focus {
+  box-shadow: 0 0 0 30px #fff inset !important; }
+.pagoL-main input:-autofill, .pagoL-main select:-autofill {
+  box-shadow: 0 0 0 30px #f5fafa inset !important; }
+.pagoL-main input:autofill:focus, .pagoL-main select:autofill:focus {
+  box-shadow: 0 0 0 30px #fff inset !important; }
+
+.pagoL-loading:before, [data-pagoL]:empty:before, .pagoL-select p:before, .pagoL-btn-main:before {
+  font-family: "PagoLibre Icons";
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none;
+  text-indent: 0;
+  position: absolute;
+  z-index: 1; }
+
+.pagoL-loader:before {
+  content: "\e900"; }
+
+.pagoL-loading, [data-pagoL]:empty {
+  position: relative;
+  text-indent: -999995px;
+  overflow: hidden; }
+  .pagoL-loading i, [data-pagoL]:empty i {
+    display: none; }
+  .pagoL-loading:before, [data-pagoL]:empty:before {
+    content: "\e900";
+    animation: pagoL-loading 0.6s linear infinite;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 29px;
+    font-size: 21px;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    margin-top: -15px;
+    margin-left: -15px;
+    color: #2bb0ba; }
+  .pagoL-loading div, .pagoL-loading ul, .pagoL-loading h1, .pagoL-loading h2, .pagoL-loading h3, .pagoL-loading h4, .pagoL-loading p, .pagoL-loading span, .pagoL-loading table, .pagoL-loading a, [data-pagoL]:empty div, [data-pagoL]:empty ul, [data-pagoL]:empty h1, [data-pagoL]:empty h2, [data-pagoL]:empty h3, [data-pagoL]:empty h4, [data-pagoL]:empty p, [data-pagoL]:empty span, [data-pagoL]:empty table, [data-pagoL]:empty a {
+    opacity: 0; }
+
+.pagoL-btn.pagoL-loading img {
+  display: none !important; }
+.pagoL-btn.pagoL-loading:before {
+  color: #fff; }
+
+.pagoL-hidden {
+  position: absolute !important;
+  width: 0 !important;
+  max-width: 0 !important;
+  min-width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  padding: 0 !important; }
+
+.pagoL-scrollbar {
+  overflow-y: scroll !important;
+  scrollbar-color: #ced6db #ced6db;
+  scrollbar-width: thin; }
+  .pagoL-scrollbar::-webkit-scrollbar {
+    width: 5px; }
+  .pagoL-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1; }
+  .pagoL-scrollbar::-webkit-scrollbar-thumb {
+    background: #ced6db;
+    border-radius: 6px;
+    transition: all 0.4s; }
+  .pagoL-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #A0A0A0; }
+
+/* 
+
+# TYPOGRAPHY
+==========================================================
+
+*/
+.pagoL-title {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 600;
+  margin: 0; }
+  .pagoL-title + .pagoL-text:not(:empty) {
+    margin-top: 15px; }
+
+.pagoL-text {
+  font-size: 15px;
+  line-height: 25px;
+  color: #5c7171;
+  letter-spacing: .2px; }
+
+/* 
+
+# ELEMENTS
+==========================================================
+
+*/
+.pagoL-select ul, .pagoL-ul {
+  padding: 10px 0 !important;
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  margin: 0;
+  background: #fff;
+  border-radius: 4px;
+  padding: 10px 0;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  list-style: none;
+  z-index: 9999995; }
+  .pagoL-select ul.pagoL-active, .pagoL-ul.pagoL-active {
+    display: block;
+    margin-bottom: 15px; }
+  .pagoL-select ul li, .pagoL-ul li {
+    cursor: pointer;
+    padding: 6px 25px 6px 12px;
+    margin: 0;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: .3px;
+    line-height: 20px;
+    white-space: nowrap;
+    list-style: none;
+    transition: all 0.1s; }
+    .pagoL-select ul li.pagoL-active, .pagoL-select ul li .pagoL-label div, .pagoL-ul li.pagoL-active, .pagoL-ul li .pagoL-label div {
+      display: none; }
+    .pagoL-select ul li .pagoL-label, .pagoL-ul li .pagoL-label {
+      transition: none; }
+    .pagoL-select ul li:hover, .pagoL-select ul li:hover .pagoL-label, .pagoL-ul li:hover, .pagoL-ul li:hover .pagoL-label {
+      background-color: #2bb0ba;
+      color: #fff;
+      border-color: #fff; }
+
+.pagoL-select {
+  position: relative;
+  color: #464646;
+  font-size: 14px;
+  height: 35px;
+  line-height: 35px;
+  display: inline-block; }
+  .pagoL-select p {
+    position: relative;
+    padding: 0 20px 0 0;
+    margin: 0;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: .3px;
+    font-size: 13px !important;
+    line-height: 35px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.4s; }
+    .pagoL-select p span {
+      font-weight: 400;
+      opacity: 0.7; }
+    .pagoL-select p .pagoL-label {
+      border: none;
+      margin: 0;
+      font-size: 13px;
+      line-height: 35px;
+      padding: 0;
+      opacity: 1;
+      font-weight: 500; }
+      .pagoL-select p .pagoL-label div {
+        display: none; }
+    .pagoL-select p:before {
+      content: "\61";
+      top: 0;
+      right: 1px;
+      font-size: 9px;
+      line-height: 35px; }
+    .pagoL-select p:hover, .pagoL-select p:hover span {
+      color: #2bb0ba; }
+  .pagoL-select.pagoL-loading {
+    overflow: visible; }
+  .pagoL-select.pagoL-right ul {
+    right: 0; }
+  .pagoL-select + .pagoL-select {
+    margin-left: 20px; }
+
+.pagoL-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; }
+  .pagoL-input span {
+    display: block;
+    width: 150px;
+    min-width: 150px;
+    flex-grow: 1;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    color: #464646; }
+  .pagoL-input input,
+  .pagoL-input select,
+  .pagoL-input textarea {
+    position: static;
+    border-radius: 4px !important;
+    color: #464646;
+    font-size: 13px;
+    line-height: 35px;
+    font-weight: 400;
+    border: 1px solid #d4d4d4;
+    background-color: #f5fafa;
+    outline: none;
+    height: 42px;
+    min-height: 42px;
+    min-width: 200px;
+    max-width: none;
+    padding: 0 10px;
+    transition: all 0.4s;
+    width: 100%;
+    margin: 0 !important;
+    box-sizing: border-box;
+    box-shadow: none; }
+    .pagoL-input input:focus, .pagoL-input input.pagoL-focus,
+    .pagoL-input select:focus,
+    .pagoL-input select.pagoL-focus,
+    .pagoL-input textarea:focus,
+    .pagoL-input textarea.pagoL-focus {
+      border: 1px solid #2bb0ba;
+      box-shadow: 0 0 5px rgba(39, 255, 222, 0.2);
+      background: #fff;
+      color: #464646;
+      outline: none !important; }
+  .pagoL-input select {
+    min-height: 37px; }
+  .pagoL-input textarea {
+    line-height: 20px;
+    min-height: 75px;
+    padding: 8px 10px; }
+  .pagoL-input > div {
+    padding-right: 30px;
+    max-width: 800px; }
+    .pagoL-input > div p, .pagoL-input > div p a {
+      font-size: 13px;
+      line-height: 22px;
+      letter-spacing: 0.3px;
+      margin: 5px 0 0 0;
+      color: #5c7171;
+      font-weight: 400; }
+      .pagoL-input > div p a, .pagoL-input > div p a a {
+        margin: 0 0 0 5px;
+        text-decoration: none; }
+        .pagoL-input > div p a:hover, .pagoL-input > div p a a:hover {
+          text-decoration: underline; }
+  .pagoL-input input[type="checkbox"] {
+    background: #fff;
+    clear: none;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 0;
+    height: 42px;
+    min-height: 42px;
+    width: 42px;
+    min-width: 42px;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    outline: none;
+    box-shadow: none;
+    background-color: #f5fafa;
+    -webkit-appearance: none; }
+  .pagoL-input input[type="checkbox"]:checked:before {
+    content: "\e901" !important;
+    font-family: "PagoLibre Icons" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    line-height: 42px;
+    font-size: 15px;
+    color: #2bb0ba;
+    margin: 0;
+    width: 100%;
+    height: 100%; }
+  .pagoL-input + .pagoL-input {
+    margin-top: 10px; }
+  .pagoL-input.pagoL-error input, .pagoL-input.pagoL-error select, .pagoL-input.pagoL-error textarea {
+    border: 1px solid #ca3434;
+    box-shadow: 0 0 5px rgba(202, 52, 52, 0.25); }
+
+.pagoL-input-btn .pagoL-btn {
+  margin-left: 15px;
+  border-radius: 4px;
+  height: 39px !important;
+  line-height: 39px !important;
+  flex: 0 0 auto; }
+  .pagoL-input-btn .pagoL-btn:not(:hover) {
+    border-color: #d4d4d4; }
+  .pagoL-input-btn .pagoL-btn.pagoL-loading:before {
+    color: #2bb0ba; }
+
+.pagoL-label, .pagoL-admin .pagoL-input span.pagoL-label {
+  display: inline-block;
+  width: auto;
+  min-width: 0;
+  margin: 0 15px;
+  border: 1px solid #5c7171;
+  color: #5c7171;
+  font-size: 11px;
+  line-height: 11px;
+  padding: 3px 7px;
+  font-weight: 500;
+  border-radius: 4px;
+  letter-spacing: .2px;
+  white-space: nowrap;
+  transition: color .4s, border-color .4s, background-color .4s; }
+
+.pagoL-clipboard {
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.4s; }
+  .pagoL-clipboard:hover {
+    color: #2bcbd7; }
+
+.pagoL-toolip-cnt {
+  position: relative;
+  overflow: visible !important; }
+  .pagoL-toolip-cnt:hover .pagoL-toolip, .pagoL-toolip-cnt.pagoL-active .pagoL-toolip {
+    display: block !important;
+    animation: pagoL-fade-bottom-center 1s; }
+
+.pagoL-toolip {
+  position: absolute;
+  display: none !important;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 400 !important;
+  font-style: normal;
+  white-space: nowrap;
+  letter-spacing: .2px;
+  font-size: 13px !important;
+  line-height: 20px;
+  z-index: 995;
+  background: #464646;
+  border-radius: 30px;
+  padding: 3px 12px;
+  color: #fff !important;
+  margin-top: -40px;
+  min-width: 0 !important;
+  max-width: none !important;
+  width: auto !important;
+  text-align: center; }
+  .pagoL-toolip:after {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%, 8px);
+    content: " ";
+    border-width: 6px;
+    border-style: solid;
+    border-color: #464646 transparent transparent; }
+
+.pagoL-info {
+  font-size: 13px;
+  line-height: 20px;
+  color: #fff;
+  background-color: #ca3434;
+  right: 0;
+  left: 0;
+  top: 0;
+  margin: 0 0 40px 0;
+  padding: 15px 20px;
+  border-radius: 4px;
+  display: none; }
+  .pagoL-info:not(:empty) {
+    display: block;
+    animation: pagoL-fade-animation 0.4s; }
+
+.pagoL-btn {
+  font-size: 14px;
+  line-height: 39px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  border-radius: 30px;
+  min-width: 0;
+  background-color: #2bb0ba;
+  text-decoration: none;
+  color: #fff;
+  height: 38px;
+  padding: 0 25px;
+  position: relative;
+  display: inline-block;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: color .4s, background-color .4s, border-color .4s, opacity .4s; }
+  .pagoL-btn i {
+    margin-right: 15px;
+    font-size: 17px;
+    transform: translateY(1px);
+    display: inline-block;
+    font-weight: 400;
+    line-height: 0;
+    transform: translateY(3px);
+    margin: 0 7px 0 -5px; }
+  .pagoL-btn.pagoL-btn-border {
+    background: none !important;
+    border: 1px solid #5c7171;
+    color: #5c7171;
+    height: 36px;
+    line-height: 37px; }
+    .pagoL-btn.pagoL-btn-border:hover, .pagoL-btn.pagoL-btn-border:active {
+      color: #2bb0ba;
+      border-color: #2bb0ba; }
+  .pagoL-btn.pagoL-btn-img {
+    padding-left: 43px;
+    padding-right: 15px; }
+    .pagoL-btn.pagoL-btn-img img {
+      position: absolute;
+      height: 18px;
+      left: 16px;
+      top: 7px; }
+  .pagoL-btn:hover, .pagoL-btn:active {
+    background-color: #2bcbd7;
+    color: #fff; }
+  .pagoL-btn + .pagoL-btn {
+    margin-left: 15px; }
+  .pagoL-btn.pagoL-disabled {
+    background-color: #e3ebeb !important;
+    color: #aeb7b7 !important;
+    cursor: not-allowed !important; }
+
+.pagoL-btn-icon {
+  position: relative;
+  cursor: pointer;
+  width: 33px;
+  height: 33px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  opacity: 0.8;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.4s;
+  text-decoration: none !important;
+  overflow: hidden;
+  color: #464646; }
+  .pagoL-btn-icon i {
+    line-height: 33px;
+    font-size: 18px;
+    width: 33px; }
+    .pagoL-btn-icon i:before {
+      font-size: 18px;
+      line-height: 35px; }
+  .pagoL-btn-icon:before {
+    font-size: 23px;
+    line-height: 35px; }
+  .pagoL-btn-icon.pagoL-loading:before {
+    line-height: 30px; }
+  .pagoL-btn-icon:hover {
+    opacity: 1;
+    border-color: #2bb0ba;
+    color: #2bb0ba;
+    background-color: rgba(39, 255, 222, 0.08); }
+
+.pagoL-btn-text {
+  cursor: pointer;
+  transition: all 0.4s; }
+  .pagoL-btn-text i {
+    margin-right: 15px;
+    display: inline-block; }
+  .pagoL-btn-text:hover {
+    color: #2bb0ba; }
+
+.pagoL-btn-red:hover {
+  border-color: #ca3434 !important;
+  color: #ca3434 !important;
+  background-color: rgba(202, 52, 52, 0.1) !important; }
+  .pagoL-btn-red:hover i {
+    color: #ca3434 !important; }
+.pagoL-btn-red.pagoL-loading:before {
+  color: #ca3434; }
+.pagoL-btn-red.pagoL-link:hover:after {
+  background-color: #ca3434 !important; }
+.pagoL-btn-red.pagoL-link:hover {
+  background-color: transparent !important; }
+
+.pagoL-link, .pagoL-underline {
+  cursor: pointer;
+  letter-spacing: .5px;
+  transition: all 0.4s; }
+  .pagoL-link:hover, .pagoL-link:active, .pagoL-underline:hover, .pagoL-underline:active {
+    color: #2bb0ba; }
+
+.pagoL-underline {
+  position: relative;
+  display: inline-block;
+  text-decoration: none; }
+  .pagoL-underline:after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    transition: all 0.4s;
+    background-color: #d4d4d4; }
+  .pagoL-underline:hover:after {
+    background-color: #2bb0ba; }
+
+.pagoL-box {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 45px;
+  border-radius: 6px;
+  border: 1px solid #d4d4d4;
+  background: #fff;
+  position: relative; }
+  .pagoL-box + .pagoL-box {
+    margin-top: 15px; }
+
+.pagoL-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center; }
+  .pagoL-flex .pagoL-input + .pagoL-input {
+    margin: 0 0 0 15px !important;
+    padding-top: 0 !important;
+    border: none !important; }
+
+hr {
+  border: none;
+  background: none;
+  display: block;
+  clear: both;
+  height: 30px; }
+
+.pagoL-main {
+  max-width: 600px;
+  font-size: 15px;
+  text-align: left; }
+  .pagoL-main .pagoL-btn, .pagoL-main .pagoL-btn.pagoL-btn-border {
+    line-height: 32px;
+    height: 31px; }
+  .pagoL-main > div {
+    margin-top: 0 !important; }
+  .pagoL-main .pagoL-input span {
+    border: 1px solid #d4d4d4;
+    line-height: 42px;
+    padding-left: 15px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    height: 40px;
+    min-height: 40px;
+    border-right: none; }
+  .pagoL-main .pagoL-input input, .pagoL-main .pagoL-input select, .pagoL-main .pagoL-input textarea {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important; }
+  .pagoL-main .pagoL-input.pagoL-input-textarea {
+    align-items: stretch; }
+    .pagoL-main .pagoL-input.pagoL-input-textarea > span {
+      flex: 1;
+      height: auto; }
+    .pagoL-main .pagoL-input.pagoL-input-textarea textarea {
+      max-width: 100%; }
+  .pagoL-main .pagoL-input.pagoL-input-checkbox {
+    justify-content: start; }
+    .pagoL-main .pagoL-input.pagoL-input-checkbox span {
+      max-width: 150px; }
+  .pagoL-main:not([data-price]) .pagoL-vat {
+    display: none; }
+  .pagoL-main .pagoL-text .pagoL-link {
+    color: #5c7171; }
+    .pagoL-main .pagoL-text .pagoL-link:not(:hover) {
+      text-decoration: none; }
+
+.pagoL-main ::placeholder, .pagoL-box ::placeholder {
+  color: #9eacac; }
+
+body.pagoL-loading {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed; }
+  body.pagoL-loading > div {
+    display: none; }
+
+.pagoL-box {
+  margin: 0;
+  padding: 0;
+  color: #464646; }
+
+.pagoL-top {
+  max-width: 800px;
+  padding: 30px 20px; }
+  .pagoL-top .pagoL-title {
+    margin: 0;
+    display: flex;
+    justify-content: space-between; }
+  .pagoL-top + .pagoL-body {
+    border-top: 1px solid #d4d4d4; }
+
+.pagoL-cancel-transaction {
+  margin-top: 15px; }
+
+.pagoL-countdown {
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  position: relative; }
+  .pagoL-countdown + .pagoL-btn {
+    margin-left: 15px; }
+  .pagoL-countdown:before, .pagoL-countdown:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    border-radius: 50%;
+    margin-top: -5px;
+    background-color: #ca3434;
+    animation: pagoL-pulse 1s ease-in-out infinite both;
+    display: none; }
+  .pagoL-countdown:after {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    left: -40px;
+    animation: pagoL-ping 1s ease-in-out infinite both; }
+  .pagoL-countdown.pagoL-countdown-expiring:before, .pagoL-countdown.pagoL-countdown-expiring:after {
+    display: block; }
+
+.pagoL-body {
+  padding: 30px 20px; }
+  .pagoL-body .pagoL-title .pagoL-text {
+    font-weight: 400;
+    margin-top: 5px; }
+
+.pagoL-cnt {
+  text-align: center; }
+  .pagoL-cnt .pagoL-title {
+    display: block; }
+
+.pagoL-amount-fiat {
+  justify-content: center; }
+  .pagoL-amount-fiat > div {
+    margin: 0 5px; }
+  .pagoL-amount-fiat:not(.pagoL-donation) > div:first-child {
+    display: none; }
+
+.pagoL-donation {
+  text-align: left; }
+  .pagoL-donation #user-amount {
+    align-items: center; }
+    .pagoL-donation #user-amount span {
+      margin: 0 0 0 60px;
+      padding-right: 15px; }
+
+.pagoL-vat {
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 5px;
+  display: block;
+  letter-spacing: .3px; }
+  .pagoL-vat:empty {
+    display: none; }
+
+.pagoL-billing .pagoL-title-1 {
+  margin-bottom: 30px; }
+.pagoL-billing .pagoL-title-2 {
+  margin-top: 30px; }
+.pagoL-billing.pagoL-hidden {
+  display: none; }
+
+.pagoL-payment-methods-cnt, .pagoL-billing-cnt {
+  align-items: flex-start;
+  padding-top: 30px; }
+
+.pagoL-payment-methods-cnt > .pagoL-title, .pagoL-amount-fiat > .pagoL-title {
+  white-space: nowrap; }
+
+.pagoL-payment-methods-cnt .pagoL-collapse > div:first-child {
+  height: 295px; }
+.pagoL-payment-methods-cnt .pagoL-collapse .pagoL-collapse-btn {
+  display: block; }
+
+.pagoL-checkout-top .pagoL-text b {
+  font-weight: 500;
+  font-size: 14px; }
+
+.pagoL-payment-methods > div {
+  justify-content: flex-start;
+  padding: 5px 15px 5px 5px;
+  border: 1px solid #d4d4d4;
+  border-radius: 40px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.4s; }
+  .pagoL-payment-methods > div img {
+    max-width: 30px; }
+  .pagoL-payment-methods > div img + span {
+    display: block;
+    padding: 0 10px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 17px;
+    letter-spacing: .1px;
+    white-space: nowrap; }
+  .pagoL-payment-methods > div span + span {
+    display: block;
+    font-size: 15px;
+    line-height: 15px;
+    min-width: 40px;
+    margin-left: auto;
+    color: #5c7171;
+    transition: all 0.4s; }
+  .pagoL-payment-methods > div:not(.pagoL-hidden) + div {
+    margin-top: 10px; }
+  .pagoL-payment-methods > div:hover, .pagoL-payment-methods > div:hover .pagoL-label {
+    border-color: #2bcbd7;
+    color: #2bb0ba; }
+    .pagoL-payment-methods > div:hover span + span, .pagoL-payment-methods > div:hover .pagoL-label span + span {
+      color: #2bcbd7; }
+.pagoL-payment-methods [data-cryptocurrency="stripe"] > img, .pagoL-payment-methods [data-cryptocurrency="verifone"] > img, .pagoL-payment-methods [data-cryptocurrency="paypal"] > img {
+  max-width: 74px; }
+.pagoL-payment-methods .pagoL-label {
+  display: inline;
+  border-color: #d4d4d4;
+  background: #fff;
+  z-index: 2;
+  position: relative; }
+  .pagoL-payment-methods .pagoL-label div {
+    display: inline; }
+
+.pagoL-pay {
+  display: none;
+  animation: pagoL-fade-in .5s; }
+
+.pagoL-pay-cnt {
+  display: none;
+  animation: pagoL-fade-in .5s; }
+  .pagoL-pay-cnt .pagoL-body {
+    padding: 0; }
+    .pagoL-pay-cnt .pagoL-body > div {
+      padding: 10px 20px;
+      border-top: 1px solid #d4d4d4; }
+    .pagoL-pay-cnt .pagoL-body > div:first-child {
+      padding: 30px 20px;
+      border-top: none; }
+  .pagoL-pay-cnt .pagoL-top .pagoL-title {
+    align-items: center; }
+  .pagoL-pay-cnt .pagoL-cnt {
+    display: none; }
+  .pagoL-pay-cnt .pagoL-pay {
+    display: block; }
+
+.pagoL-pay-cnt-active .pagoL-cnt {
+  display: none; }
+.pagoL-pay-cnt-active .pagoL-pay-cnt {
+  display: block; }
+
+.pagoL-qrcode {
+  max-width: 130px; }
+
+.pagoL-qrcode-text {
+  padding: 0;
+  width: 100%; }
+  .pagoL-qrcode-text img {
+    max-width: 35px;
+    margin-right: 15px; }
+
+.pagoL-qrcode-link + .pagoL-qrcode-text {
+  padding-left: 30px;
+  width: auto; }
+
+.pagoL-pay-address .pagoL-title, .pagoL-pay-amount .pagoL-title {
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: .3px;
+  margin: 5px 0 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+  .pagoL-pay-address .pagoL-title > div, .pagoL-pay-amount .pagoL-title > div {
+    display: inline-block;
+    color: #5c7171;
+    padding-left: 10px;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 11px; }
+.pagoL-pay-address .pagoL-clipboard, .pagoL-pay-amount .pagoL-clipboard {
+  line-height: 37px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  margin: 0 -7px 0 7px; }
+  .pagoL-pay-address .pagoL-clipboard:before, .pagoL-pay-amount .pagoL-clipboard:before {
+    line-height: 30px; }
+.pagoL-pay-address > div:first-child, .pagoL-pay-amount > div:first-child {
+  overflow: hidden; }
+
+.pagoL-pay-top-back {
+  display: none; }
+  .pagoL-pay-top-back .pagoL-text {
+    margin-bottom: 15px; }
+
+.pagoL-pay-top-main.pagoL-hidden + .pagoL-pay-top-back {
+  display: block; }
+
+.pagoL-tx-cnt {
+  display: none;
+  text-align: center;
+  padding: 60px 0; }
+  .pagoL-tx-cnt .pagoL-loading {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto 15px auto; }
+    .pagoL-tx-cnt .pagoL-loading:before {
+      line-height: 30px;
+      font-size: 30px;
+      color: #2bb0ba; }
+  .pagoL-tx-cnt .pagoL-flex {
+    justify-content: center;
+    margin-top: 15px;
+    letter-spacing: .3px; }
+    .pagoL-tx-cnt .pagoL-flex > div {
+      margin: 0 5px; }
+
+.pagoL-tx-status {
+  background: #2bb0ba;
+  color: #FFF;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px; }
+
+.pagoL-tx-confirmations {
+  font-weight: 500; }
+
+.pagoL-tx-cnt-active .pagoL-tx-cnt {
+  display: block; }
+.pagoL-tx-cnt-active .pagoL-cnt, .pagoL-tx-cnt-active .pagoL-pay-cnt {
+  display: none; }
+
+.pagoL-complete-cnt, .pagoL-failed-cnt, .pagoL-underpayment-cnt {
+  display: none;
+  text-align: center;
+  padding: 60px 30px;
+  animation: pagoL-fade-in .5s; }
+  .pagoL-complete-cnt > i, .pagoL-failed-cnt > i, .pagoL-underpayment-cnt > i {
+    color: #2bb0ba;
+    font-size: 30px;
+    margin-bottom: 15px;
+    display: inline-block; }
+
+.pagoL-failed-cnt > i, .pagoL-underpayment-cnt > i {
+  color: #ca3434; }
+.pagoL-failed-cnt .pagoL-btn, .pagoL-underpayment-cnt .pagoL-btn {
+  margin-top: 15px; }
+
+.pagoL-complete-cnt-active .pagoL-cnt, .pagoL-failed-cnt-active .pagoL-cnt, .pagoL-underpayment-cnt-active .pagoL-cnt {
+  display: none; }
+
+.pagoL-complete-cnt-active .pagoL-complete-cnt {
+  display: block; }
+
+.pagoL-complete-cnt .pagoL-order-processing span:first-child {
+  display: none; }
+.pagoL-complete-cnt .pagoL-text:not(.pagoL-order-processing) span:last-child {
+  display: none; }
+.pagoL-complete-cnt .pagoL-link {
+  color: #5c7171;
+  margin-top: 15px;
+  margin-bottom: 5px; }
+  .pagoL-complete-cnt .pagoL-link:hover {
+    color: #2bb0ba; }
+
+.pagoL-failed-cnt-active .pagoL-failed-cnt {
+  display: block; }
+
+.pagoL-underpayment-cnt-active .pagoL-underpayment-cnt {
+  display: block; }
+
+#pagoL-expired-tx-id {
+  font-weight: 500; }
+
+.pagoL-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pagoL-fade-in .5s;
+  z-index: 9999995; }
+
+.pagoL-popup-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999991;
+  background-color: rgba(227, 227, 227, 0.5);
+  animation: pagoL-fade-in .5s; }
+
+.pagoL-popup:not(.pagoL-active), .pagoL-popup-overlay:not(.pagoL-active) {
+  display: none; }
+
+@media (min-width: 429px) {
+  .pagoL-popup {
+    width: 600px; } }
+.pagoL-btn-popup {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap; }
+  .pagoL-btn-popup img {
+    margin: 0 15px 0 0;
+    height: 20px; }
+
+.pagoL-popup-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 10px;
+  opacity: .5;
+  cursor: pointer;
+  z-index: 9;
+  transition: all 0.4s; }
+  .pagoL-popup-close:hover {
+    color: #ca3434;
+    opacity: 1; }
+
+#user-amount {
+  justify-content: flex-end;
+  margin-bottom: 0; }
+  #user-amount span {
+    width: auto;
+    min-width: 0;
+    margin-right: 30px; }
+  #user-amount input {
+    min-width: 150px;
+    width: 150px; }
+
+.pagoL-error {
+  margin-bottom: 30px;
+  color: #ca3434;
+  font-weight: 500; }
+  .pagoL-error:empty {
+    display: none; }
+
+[data-pagoL]:empty {
+  min-height: 35px; }
+
+.pagoL-billing {
+  position: relative; }
+
+.pagoL-billing-cnt.pagoL-flex .pagoL-input + .pagoL-input {
+  margin: 5px 0 0 0 !important; }
+
+#pagoL-btn-invoice-close {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  border: none !important;
+  background: none !important; }
+  #pagoL-btn-invoice-close:before {
+    font-size: 12px; }
+
+#pagoL-btn-invoice.pagoL-hidden {
+  display: none; }
+
+.pagoL-collapse > div:first-child {
+  overflow: hidden;
+  position: relative; }
+  .pagoL-collapse > div:first-child:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(rgba(64, 64, 64, 0), white);
+    z-index: 0; }
+
+.pagoL-collapse-btn {
+  display: none;
+  text-align: center;
+  letter-spacing: .5px;
+  margin-top: 10px; }
+  .pagoL-collapse-btn i {
+    font-size: 12px;
+    transform: translateY(1px); }
+
+.pagoL-cloud-branding {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: .3px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 15px;
+  font-size: 13px;
+  color: #000;
+  transition: all 0.4s; }
+  .pagoL-cloud-branding img {
+    height: 18px;
+    margin-left: 5px; }
+  .pagoL-cloud-branding:hover {
+    opacity: .8; }
+
+#metamask, #walletconnect, #metamask.pagoL-loading:before, #walletconnect.pagoL-loading:before {
+  color: #384242; }
+
+#metamask {
+  background: rgba(248, 132, 42, 0.2);
+  display: none; }
+  #metamask:hover {
+    background: rgba(248, 132, 42, 0.4); }
+
+#walletconnect {
+  background: rgba(31, 149, 252, 0.2);
+  display: none; }
+  #walletconnect img {
+    left: 13px; }
+  #walletconnect:hover {
+    background: rgba(31, 149, 252, 0.4); }
+
+[data-active="eth"] #metamask, [data-active="usdt"] #metamask, [data-active="usdc"] #metamask, [data-active="link"] #metamask, [data-active="shib"] #metamask, [data-active="bat"] #metamask, [data-custom-token="erc-20"] #metamask, [data-active="bnb"] #metamask {
+  display: block; }
+
+.pagoL-background-image {
+  background-position: center center;
+  background-size: cover;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom: 1px solid #d4d4d4;
+  height: 300px; }
+
+/* 
+
+# SHOP
+==========================================================
+
+*/
+.pagoL-user-details, .pagoL-custom-fields {
+  padding-top: 30px; }
+  .pagoL-user-details .pagoL-title, .pagoL-custom-fields .pagoL-title {
+    margin-bottom: 30px; }
+
+#pagoL-discount-field, .pagoL-user-details .pagoL-input, .pagoL-billing-cnt .pagoL-input, .pagoL-custom-fields .pagoL-input {
+  text-align: left;
+  align-items: center;
+  margin-bottom: 0; }
+
+.pagoL-input-license-key {
+  display: inline-flex;
+  text-align: left;
+  align-items: center;
+  margin-top: 15px; }
+  .pagoL-input-license-key span {
+    min-width: 0;
+    width: 190px;
+    white-space: nowrap; }
+  .pagoL-input-license-key input {
+    min-width: 310px;
+    text-align: center; }
+
+#pagoL-discount-field {
+  margin-top: 30px; }
+
+/* 
+
+# RTL
+==========================================================
+
+*/
+.pagoL-rtl, .pagoL-rtl textarea, .pagoL-rtl input, .pagoL-rtl ul, .pagoL-rtl ul li {
+  direction: rtl;
+  text-align: right; }
+
+.pagoL-rtl .pagoL-payment-methods {
+  padding-left: 0; }
+  .pagoL-rtl .pagoL-payment-methods > div {
+    padding: 5px 5px 5px 15px; }
+    .pagoL-rtl .pagoL-payment-methods > div img + span {
+      text-align: right;
+      display: flex; }
+    .pagoL-rtl .pagoL-payment-methods > div span + span {
+      margin-left: 0;
+      margin-right: auto; }
+.pagoL-rtl .pagoL-countdown + .pagoL-btn, .pagoL-rtl .pagoL-btn + .pagoL-btn {
+  margin-right: 15px;
+  margin-left: 0; }
+.pagoL-rtl .pagoL-qrcode-text img {
+  margin-left: 35px;
+  margin-right: 0; }
+.pagoL-rtl .pagoL-countdown:after {
+  left: auto;
+  right: -40px; }
+.pagoL-rtl .pagoL-countdown:before {
+  left: auto;
+  right: -30px; }
+.pagoL-rtl .pagoL-btn-popup img {
+  margin: 0 0 0 15px; }
+.pagoL-rtl .pagoL-btn i {
+  transform: translateY(3px);
+  margin: 0 -5px 0 7px; }
+.pagoL-rtl .pagoL-donation #user-amount span {
+  margin: 0 0 0 10px; }
+
+/* 
+
+# RESPONSIVE
+==========================================================
+
+*/
+@media (min-width: 600px) {
+  .pagoL-payment-methods > div img + span {
+    width: 265px; } }
+@media (max-width: 428px) {
+  .pagoL-main {
+    text-align: center; }
+    .pagoL-main .pagoL-input {
+      display: block; }
+      .pagoL-main .pagoL-input span {
+        width: auto;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 4px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden; }
+      .pagoL-main .pagoL-input input, .pagoL-main .pagoL-input select {
+        border-bottom-left-radius: 4px !important;
+        border-top-right-radius: 0 !important; }
+      .pagoL-main .pagoL-input.pagoL-input-checkbox span {
+        max-width: none; }
+      .pagoL-main .pagoL-input [type="checkbox"] {
+        width: 100%; }
+    .pagoL-main .pagoL-input-btn .pagoL-btn {
+      width: auto;
+      display: block;
+      margin-left: 0;
+      border-top: none;
+      border-top-right-radius: 0;
+      border-top-left-radius: 0; }
+    .pagoL-main .pagoL-input-btn input {
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important; }
+
+  .pagoL-top .pagoL-title, .pagoL-payment-methods-cnt {
+    display: block; }
+
+  .pagoL-amount-fiat {
+    justify-content: center; }
+    .pagoL-amount-fiat > div {
+      margin: 0 5px; }
+
+  .pagoL-donation {
+    display: block;
+    text-align: center; }
+    .pagoL-donation #user-amount {
+      margin-top: 15px;
+      justify-content: center; }
+      .pagoL-donation #user-amount span {
+        margin: 0 10px 0 0;
+        text-align: right;
+        display: inline-block;
+        flex-grow: 0; }
+
+  .pagoL-payment-methods {
+    padding: 0;
+    margin: 0 auto; }
+    .pagoL-payment-methods > div {
+      overflow: hidden; }
+      .pagoL-payment-methods > div img + span {
+        max-width: 65%; }
+    .pagoL-payment-methods .pagoL-label div {
+      display: none; }
+
+  .pagoL-pay-amount > .pagoL-flex {
+    display: block; }
+  .pagoL-pay-amount #metamask {
+    margin: 15px 0 0 0; }
+
+  .pagoL-pay-top-main .pagoL-title .pagoL-flex {
+    margin-top: 20px;
+    justify-content: center; }
+    .pagoL-pay-top-main .pagoL-title .pagoL-flex > div {
+      margin: 0 10px; }
+
+  .pagoL-pay-cnt .pagoL-body > div:first-child {
+    display: block; }
+
+  .pagoL-qrcode {
+    margin: 0 auto 30px auto; }
+
+  .pagoL-pay-address, .pagoL-pay-amount {
+    display: block;
+    position: relative; }
+    .pagoL-pay-address .pagoL-clipboard, .pagoL-pay-amount .pagoL-clipboard {
+      margin: 5px auto 0 auto;
+      display: block; }
+
+  .pagoL-qrcode-text, .pagoL-pay-address, .pagoL-pay-amount {
+    justify-content: center; }
+
+  .pagoL-qrcode-text {
+    padding-left: 0 !important;
+    display: block; }
+    .pagoL-qrcode-text img {
+      margin: 0 0 30px 0; }
+
+  .pagoL-payment-methods-cnt .pagoL-collapse-btn {
+    padding-left: 0 !important; }
+
+  [data-active="eth"] #metamask, [data-active="usdt"] #metamask, [data-active="usdc"] #metamask, [data-active="link"] #metamask, [data-active="shib"] #metamask, [data-active="bat"] #metamask {
+    display: inline-block; }
+
+  .pagoL-background-image {
+    height: 200px; } }
+
+/*# sourceMappingURL=client.css.map */

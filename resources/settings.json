@@ -1,0 +1,1532 @@
+[
+  {
+    "type": "multi-input",
+    "id": "addresses",
+    "title": "Cryptocurrency addresses",
+    "content": "Enter the cryptocurrency addresses that will receive payments.",
+    "help": "#address-generation",
+    "value": [
+      {
+        "type": "text",
+        "id": "address-btc",
+        "title": "Bitcoin"
+      },
+      {
+        "type": "text",
+        "id": "address-eth",
+        "title": "Ethereum"
+      },
+      {
+        "type": "text",
+        "id": "address-usdt",
+        "title": "Tether",
+        "label": "ETH Network"
+      },
+      {
+        "type": "text",
+        "id": "address-usdt_tron",
+        "title": "Tether",
+        "label": "TRX Network"
+      },
+      {
+        "type": "text",
+        "id": "address-usdt_bsc",
+        "title": "Tether",
+        "label": "BSC Network"
+      },
+      {
+        "type": "text",
+        "id": "address-usdc",
+        "title": "USD Coin",
+        "label": "ETH Network"
+      },
+      {
+        "type": "text",
+        "id": "address-ltc",
+        "title": "Litecoin"
+      },
+      {
+        "type": "text",
+        "id": "address-sol",
+        "title": "Solana"
+      },
+      {
+        "type": "text",
+        "id": "address-xmr",
+        "title": "Monero"
+      },
+      {
+        "type": "text",
+        "id": "address-xrp",
+        "title": "XRP"
+      },
+      {
+        "type": "text",
+        "id": "address-busd",
+        "title": "Binance USD",
+        "label": "BSC Network"
+      },
+      {
+        "type": "text",
+        "id": "address-bnb",
+        "title": "BNB",
+        "label": "BSC Network"
+      },
+      {
+        "type": "text",
+        "id": "address-link",
+        "title": "Chainlink",
+        "label": "ETH Network"
+      },
+      {
+        "type": "text",
+        "id": "address-doge",
+        "title": "Dogecoin"
+      },
+      {
+        "type": "text",
+        "id": "address-shib",
+        "title": "Shiba Inu",
+        "label": "ETH Network"
+      },
+      {
+        "type": "text",
+        "id": "address-algo",
+        "title": "Algorand"
+      },
+      {
+        "type": "text",
+        "id": "address-bat",
+        "title": "Basic Attention Token",
+        "label": "ETH Network"
+      },
+      {
+        "type": "text",
+        "id": "address-bch",
+        "title": "Bitcoin Cash"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "confirmations-list",
+    "title": "Confirmations number",
+    "content": "Set the minimum number of confirmations to validate a payment. Default is 3.",
+    "value": [
+      {
+        "type": "text",
+        "id": "confirmations",
+        "title": "Default"
+      },
+      {
+        "type": "text",
+        "id": "confirmations-btc",
+        "title": "Bitcoin"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-eth",
+        "title": "Ethereum"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-usdt",
+        "title": "Tether",
+        "label": "ETH Network"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-usdt_tron",
+        "title": "Tether",
+        "label": "TRX Network"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-usdt_bsc",
+        "title": "Tether",
+        "label": "BSC Network"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-usdc",
+        "title": "USD Coin",
+        "label": "ETH Network"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-xrp",
+        "title": "XRP"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-busd",
+        "title": "Binance USD",
+        "label": "BSC Network"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-bnb",
+        "title": "BNB",
+        "label": "BSC Network"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-link",
+        "title": "Chainlink",
+        "label": "ETH Network"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-doge",
+        "title": "Dogecoin"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-shib",
+        "title": "Shiba Inu",
+        "label": "ETH Network"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-ltc",
+        "title": "Litecoin"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-algo",
+        "title": "Algorand"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-bat",
+        "title": "Basic Attention Token",
+        "label": "ETH Network"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-bch",
+        "title": "Bitcoin Cash"
+      },
+      {
+        "type": "number",
+        "id": "confirmations-xmr",
+        "title": "Monero"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "confirmations-increase",
+    "title": "Increase confirmations number",
+    "content": "Set a higher number of confirmations if the transaction value exceeds the specified threshold. The transaction value refers to the FIAT value of the default currency, e.g. USD.",
+    "value": [
+      {
+        "type": "number",
+        "id": "confirmations-increase-threshold",
+        "title": "Threshold"
+      },
+      {
+        "type": "select",
+        "id": "confirmations-increase-percentage",
+        "title": "Increase percentage",
+        "value": [
+          [ "", "" ],
+          [ "2", "200%" ],
+          [ "3", "300%" ],
+          [ "4", "400%" ],
+          [ "5", "500%" ],
+          [ "6", "600%" ],
+          [ "7", "700%" ]
+        ]
+      }
+    ]
+  },
+  {
+    "type": "number",
+    "id": "payment-fee",
+    "title": "Payment fee",
+    "content": "Apply a fee on all transactions. Enter the percentage value."
+  },
+  {
+    "type": "checkbox",
+    "id": "metamask",
+    "title": "Pay with Metamask",
+    "content": "Allow users to pay with Metamask."
+  },
+  {
+    "type": "checkbox",
+    "id": "accept-underpayments",
+    "title": "Accept transactions with underpayments",
+    "content": "Consider transactions with underpayments as completed.",
+    "help": "#underpayments"
+  },
+  {
+    "type": "checkbox",
+    "id": "stop-reusing-addresses",
+    "title": "Stop reusing addresses",
+    "content": "Stop reusing addresses after 24 hours.",
+    "help": "#address-generation"
+  },
+  {
+    "type": "select",
+    "id": "currency",
+    "title": "Currency",
+    "content": "Set the default checkout currency. Default is USD.",
+    "value": [
+      [ "", "" ],
+      [ "AED", "United Arab Emirates Dirham" ],
+      [ "AFN", "Afghan Afghani" ],
+      [ "ALL", "Albanian Lek" ],
+      [ "AMD", "Armenian Dram" ],
+      [ "ANG", "Netherlands Antillean Guilder" ],
+      [ "AOA", "Angolan Kwanza" ],
+      [ "ARS", "Argentine Peso" ],
+      [ "AUD", "Australian Dollar" ],
+      [ "AWG", "Aruban Florin" ],
+      [ "AZN", "Azerbaijani Manat" ],
+      [ "BAM", "Bosnia-Herzegovina Convertible Mark" ],
+      [ "BBD", "Barbadian Dollar" ],
+      [ "BDT", "Bangladeshi Taka" ],
+      [ "BGN", "Bulgarian Lev" ],
+      [ "BHD", "Bahraini Dinar" ],
+      [ "BIF", "Burundian Franc" ],
+      [ "BMD", "Bermudan Dollar" ],
+      [ "BND", "Brunei Dollar" ],
+      [ "BOB", "Bolivian Boliviano" ],
+      [ "BRL", "Brazilian Real" ],
+      [ "BSD", "Bahamian Dollar" ],
+      [ "BTC", "Bitcoin" ],
+      [ "BTN", "Bhutanese Ngultrum" ],
+      [ "BWP", "Botswanan Pula" ],
+      [ "BYN", "Belarusian Ruble" ],
+      [ "BZD", "Belize Dollar" ],
+      [ "CAD", "Canadian Dollar" ],
+      [ "CDF", "Congolese Franc" ],
+      [ "CHF", "Swiss Franc" ],
+      [ "CLF", "Chilean Unit of Account (UF)" ],
+      [ "CLP", "Chilean Peso" ],
+      [ "CNH", "Chinese Yuan (Offshore)" ],
+      [ "CNY", "Chinese Yuan" ],
+      [ "COP", "Colombian Peso" ],
+      [ "CRC", "Costa Rican Colón" ],
+      [ "CUC", "Cuban Convertible Peso" ],
+      [ "CUP", "Cuban Peso" ],
+      [ "CVE", "Cape Verdean Escudo" ],
+      [ "CZK", "Czech Republic Koruna" ],
+      [ "DJF", "Djiboutian Franc" ],
+      [ "DKK", "Danish Krone" ],
+      [ "DOP", "Dominican Peso" ],
+      [ "DZD", "Algerian Dinar" ],
+      [ "EGP", "Egyptian Pound" ],
+      [ "ERN", "Eritrean Nakfa" ],
+      [ "ETB", "Ethiopian Birr" ],
+      [ "EUR", "Euro" ],
+      [ "FJD", "Fijian Dollar" ],
+      [ "FKP", "Falkland Islands Pound" ],
+      [ "GBP", "British Pound Sterling" ],
+      [ "GEL", "Georgian Lari" ],
+      [ "GGP", "Guernsey Pound" ],
+      [ "GHS", "Ghanaian Cedi" ],
+      [ "GIP", "Gibraltar Pound" ],
+      [ "GMD", "Gambian Dalasi" ],
+      [ "GNF", "Guinean Franc" ],
+      [ "GTQ", "Guatemalan Quetzal" ],
+      [ "GYD", "Guyanaese Dollar" ],
+      [ "HKD", "Hong Kong Dollar" ],
+      [ "HNL", "Honduran Lempira" ],
+      [ "HRK", "Croatian Kuna" ],
+      [ "HTG", "Haitian Gourde" ],
+      [ "HUF", "Hungarian Forint" ],
+      [ "IDR", "Indonesian Rupiah" ],
+      [ "ILS", "Israeli New Sheqel" ],
+      [ "IMP", "Manx pound" ],
+      [ "INR", "Indian Rupee" ],
+      [ "IQD", "Iraqi Dinar" ],
+      [ "IRR", "Iranian Rial" ],
+      [ "ISK", "Icelandic Króna" ],
+      [ "JEP", "Jersey Pound" ],
+      [ "JMD", "Jamaican Dollar" ],
+      [ "JOD", "Jordanian Dinar" ],
+      [ "JPY", "Japanese Yen" ],
+      [ "KES", "Kenyan Shilling" ],
+      [ "KGS", "Kyrgystani Som" ],
+      [ "KHR", "Cambodian Riel" ],
+      [ "KMF", "Comorian Franc" ],
+      [ "KPW", "North Korean Won" ],
+      [ "KRW", "South Korean Won" ],
+      [ "KWD", "Kuwaiti Dinar" ],
+      [ "KYD", "Cayman Islands Dollar" ],
+      [ "KZT", "Kazakhstani Tenge" ],
+      [ "LAK", "Laotian Kip" ],
+      [ "LBP", "Lebanese Pound" ],
+      [ "LKR", "Sri Lankan Rupee" ],
+      [ "LRD", "Liberian Dollar" ],
+      [ "LSL", "Lesotho Loti" ],
+      [ "LYD", "Libyan Dinar" ],
+      [ "MAD", "Moroccan Dirham" ],
+      [ "MDL", "Moldovan Leu" ],
+      [ "MGA", "Malagasy Ariary" ],
+      [ "MKD", "Macedonian Denar" ],
+      [ "MMK", "Myanma Kyat" ],
+      [ "MNT", "Mongolian Tugrik" ],
+      [ "MOP", "Macanese Pataca" ],
+      [ "MRU", "Mauritanian Ouguiya" ],
+      [ "MUR", "Mauritian Rupee" ],
+      [ "MVR", "Maldivian Rufiyaa" ],
+      [ "MWK", "Malawian Kwacha" ],
+      [ "MXN", "Mexican Peso" ],
+      [ "MYR", "Malaysian Ringgit" ],
+      [ "MZN", "Mozambican Metical" ],
+      [ "NAD", "Namibian Dollar" ],
+      [ "NGN", "Nigerian Naira" ],
+      [ "NIO", "Nicaraguan Córdoba" ],
+      [ "NOK", "Norwegian Krone" ],
+      [ "NPR", "Nepalese Rupee" ],
+      [ "NZD", "New Zealand Dollar" ],
+      [ "OMR", "Omani Rial" ],
+      [ "PAB", "Panamanian Balboa" ],
+      [ "PEN", "Peruvian Nuevo Sol" ],
+      [ "PGK", "Papua New Guinean Kina" ],
+      [ "PHP", "Philippine Peso" ],
+      [ "PKR", "Pakistani Rupee" ],
+      [ "PLN", "Polish Zloty" ],
+      [ "PYG", "Paraguayan Guarani" ],
+      [ "QAR", "Qatari Rial" ],
+      [ "RON", "Romanian Leu" ],
+      [ "RSD", "Serbian Dinar" ],
+      [ "RUB", "Russian Ruble" ],
+      [ "RWF", "Rwandan Franc" ],
+      [ "SAR", "Saudi Riyal" ],
+      [ "SBD", "Solomon Islands Dollar" ],
+      [ "SCR", "Seychellois Rupee" ],
+      [ "SDG", "Sudanese Pound" ],
+      [ "SEK", "Swedish Krona" ],
+      [ "SGD", "Singapore Dollar" ],
+      [ "SHP", "Saint Helena Pound" ],
+      [ "SLL", "Sierra Leonean Leone" ],
+      [ "SOS", "Somali Shilling" ],
+      [ "SRD", "Surinamese Dollar" ],
+      [ "SSP", "South Sudanese Pound" ],
+      [ "STD", "São Tomé and Príncipe Dobra (pre-2018)" ],
+      [ "STN", "São Tomé and Príncipe Dobra" ],
+      [ "SVC", "Salvadoran Colón" ],
+      [ "SYP", "Syrian Pound" ],
+      [ "SZL", "Swazi Lilangeni" ],
+      [ "THB", "Thai Baht" ],
+      [ "TJS", "Tajikistani Somoni" ],
+      [ "TMT", "Turkmenistani Manat" ],
+      [ "TND", "Tunisian Dinar" ],
+      [ "TOP", "Tongan Pa'anga" ],
+      [ "TRY", "Turkish Lira" ],
+      [ "TTD", "Trinidad and Tobago Dollar" ],
+      [ "TWD", "New Taiwan Dollar" ],
+      [ "TZS", "Tanzanian Shilling" ],
+      [ "UAH", "Ukrainian Hryvnia" ],
+      [ "UGX", "Ugandan Shilling" ],
+      [ "USD", "United States Dollar" ],
+      [ "UYU", "Uruguayan Peso" ],
+      [ "UZS", "Uzbekistan Som" ],
+      [ "VEF", "Venezuelan Bolívar Fuerte (Old)" ],
+      [ "VES", "Venezuelan Bolívar Soberano" ],
+      [ "VND", "Vietnamese Dong" ],
+      [ "VUV", "Vanuatu Vatu" ],
+      [ "WST", "Samoan Tala" ],
+      [ "XAF", "CFA Franc BEAC" ],
+      [ "XAG", "Silver Ounce" ],
+      [ "XAU", "Gold Ounce" ],
+      [ "XCD", "East Caribbean Dollar" ],
+      [ "XDR", "Special Drawing Rights" ],
+      [ "XOF", "CFA Franc BCEAO" ],
+      [ "XPD", "Palladium Ounce" ],
+      [ "XPF", "CFP Franc" ],
+      [ "XPT", "Platinum Ounce" ],
+      [ "YER", "Yemeni Rial" ],
+      [ "ZAR", "South African Rand" ],
+      [ "ZMW", "Zambian Kwacha" ],
+      [ "ZWL", "Zimbabwean Dollar" ]
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "custom-token",
+    "title": "Custom token",
+    "content": "Enter the details of your custom token.",
+    "help": "#custom-token",
+    "repeater": true,
+    "repeater_button": "Add token",
+    "value": [
+      {
+        "type": "select",
+        "id": "custom-token-type",
+        "title": "Type",
+        "value": [
+          [ "", "Disabled" ],
+          [ "erc-20", "ERC-20" ],
+          [ "bep-20", "BEP-20" ]
+        ]
+      },
+      {
+        "type": "text",
+        "id": "custom-token-name",
+        "title": "Name"
+      },
+      {
+        "type": "text",
+        "id": "custom-token-code",
+        "title": "Token code"
+      },
+      {
+        "type": "text",
+        "id": "custom-token-address",
+        "title": "Address"
+      },
+      {
+        "type": "text",
+        "id": "custom-token-contract-address",
+        "title": "Contract address"
+      },
+      {
+        "type": "text",
+        "id": "custom-token-img",
+        "title": "Icon URL"
+      },
+      {
+        "type": "text",
+        "id": "custom-token-decimals",
+        "title": "Decimals"
+      },
+      {
+        "type": "number",
+        "id": "custom-token-rate",
+        "title": "USD exchange rate"
+      },
+      {
+        "type": "text",
+        "id": "custom-token-rate-url",
+        "title": "USD exchange rate URL"
+      }
+    ]
+  },
+  {
+    "type": "password",
+    "id": "xmr-secret-view-key",
+    "title": "Monero secret viewkey",
+    "content": "Your wallet's secret viewkey."
+  },
+  {
+    "type": "multi-input",
+    "id": "webhook",
+    "title": "Webhook",
+    "content": "Enter the Webhook details for sending transaction information after a payment is complete.",
+    "help": "#webhook",
+    "value": [
+      {
+        "type": "text",
+        "id": "webhook-url",
+        "title": "Webhook URL"
+      },
+      {
+        "type": "password",
+        "id": "webhook-secret",
+        "title": "Webhook secret key"
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "id": "payment-redirect",
+    "title": "Redirect URL",
+    "content": "Redirect the user to a specific URL after a successful payment."
+  },
+  {
+    "type": "multi-input",
+    "id": "api-keys",
+    "title": "API keys",
+    "content": "Enter the API keys of the Blockchain explorers.",
+    "value": [
+      {
+        "type": "password",
+        "id": "blockdaemon-key",
+        "title": "Blockdaemon"
+      },
+      {
+        "type": "password",
+        "id": "tatum-key",
+        "title": "Tatum"
+      },
+      {
+        "type": "password",
+        "id": "etherscan-key",
+        "title": "Etherscan"
+      },
+      {
+        "type": "password",
+        "id": "ethplorer-key",
+        "title": "Ethplorer"
+      },
+      {
+        "type": "password",
+        "id": "bscscan-key",
+        "title": "BscScan"
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "id": "openexchangerates-app-id",
+    "title": "Open Exchange Rates App ID",
+    "content": "Enter the Open Exchange Rates App ID."
+  },
+  {
+    "type": "multi-input",
+    "id": "stripe",
+    "title": "Stripe",
+    "content": "Enable credit and debit card payments through Stripe.",
+    "help": "#stripe",
+    "value": [
+      {
+        "type": "checkbox",
+        "id": "stripe-active",
+        "title": "Active"
+      },
+      {
+        "type": "checkbox",
+        "id": "stripe-tax",
+        "title": "Stripe Tax"
+      },
+      {
+        "type": "password",
+        "id": "stripe-key",
+        "title": "Secret key"
+      },
+      {
+        "type": "text",
+        "id": "stripe-product-id",
+        "title": "Product ID"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "verifone",
+    "title": "2Checkout",
+    "content": "Enable credit and debit card payments through 2Checkout.",
+    "help": "#verifone",
+    "value": [
+      {
+        "type": "checkbox",
+        "id": "verifone-active",
+        "title": "Active"
+      },
+      {
+        "type": "password",
+        "id": "verifone-key",
+        "title": "Secret key"
+      },
+      {
+        "type": "password",
+        "id": "verifone-word",
+        "title": "Secret word"
+      },
+      {
+        "type": "text",
+        "id": "verifone-merchant-id",
+        "title": "Merchant ID"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "paypal",
+    "title": "PayPal",
+    "content": "Enable PayPal payments.",
+    "help": "#paypal",
+    "value": [
+      {
+        "type": "checkbox",
+        "id": "paypal-active",
+        "title": "Active"
+      },
+      {
+        "type": "checkbox",
+        "id": "paypal-sandbox",
+        "title": "Sandbox"
+      },
+      {
+        "type": "text",
+        "id": "paypal-email",
+        "title": "PayPal email"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "languages",
+    "title": "Languages",
+    "content": "Set the language of the payment form and administration area.",
+    "help": "#languages",
+    "value": [
+      {
+        "type": "select",
+        "id": "language",
+        "title": "Payment form language",
+        "value": [
+          [ "", "Default" ],
+          [ "en", "English" ],
+          [ "es", "Spanish" ]
+        ]
+      },
+      {
+        "type": "select",
+        "id": "language-admin",
+        "title": "Admin language",
+        "value": [
+          [ "", "Default" ],
+          [ "en", "English" ],
+          [ "es", "Spanish" ]
+        ]
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "colors",
+    "title": "Colors",
+    "content": "Change the payment form colors.",
+    "value": [
+      {
+        "type": "color",
+        "id": "color-1",
+        "title": "Color 1"
+      },
+      {
+        "type": "color",
+        "id": "color-2",
+        "title": "Color 2"
+      },
+      {
+        "type": "color",
+        "id": "color-3",
+        "title": "Color 3"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "colors-admin",
+    "title": "Admin colors",
+    "content": "Change the admin area colors.",
+    "value": [
+      {
+        "type": "color",
+        "id": "color-admin-1",
+        "title": "Color 1"
+      },
+      {
+        "type": "color",
+        "id": "color-admin-2",
+        "title": "Color 2"
+      }
+    ]
+  },
+  {
+    "type": "select",
+    "id": "layout",
+    "title": "Layout",
+    "content": "Set the payment form layout. Default is inline.",
+    "value": [
+      [ "inline", "Inline" ],
+      [ "popup", "Pop-up" ],
+      [ "link", "Link" ],
+      [ "hidden", "Hidden" ]
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "logo",
+    "title": "Logo",
+    "content": "Manage the display of your logo.",
+    "value": [
+      {
+        "type": "text",
+        "id": "logo-url",
+        "title": "Logo URL"
+      },
+      {
+        "type": "text",
+        "id": "logo-url-png",
+        "title": "Logo URL - PNG"
+      },
+      {
+        "type": "text",
+        "id": "logo-icon-url",
+        "title": "Icon URL"
+      },
+      {
+        "type": "checkbox",
+        "id": "logo-admin",
+        "title": "Display on the admin area"
+      },
+      {
+        "type": "checkbox",
+        "id": "logo-pay",
+        "title": "Display on the payment page"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "texts",
+    "title": "Payment form texts",
+    "content": "Enter the texts of the payment form.",
+    "value": [
+      {
+        "type": "text",
+        "id": "button-text",
+        "title": "Pop-up button text"
+      },
+      {
+        "type": "text",
+        "id": "form-title",
+        "title": "Form title"
+      },
+      {
+        "type": "textarea",
+        "id": "form-description",
+        "title": "Form description"
+      },
+      {
+        "type": "text",
+        "id": "form-payment-title",
+        "title": "Payment form title"
+      },
+      {
+        "type": "textarea",
+        "id": "form-payment-description",
+        "title": "Payment form description"
+      },
+      {
+        "type": "text",
+        "id": "success-title",
+        "title": "Successful payment title"
+      },
+      {
+        "type": "textarea",
+        "id": "success-description",
+        "title": "Successful payment description"
+      },
+      {
+        "type": "text",
+        "id": "failed-title",
+        "title": "Failed payment title"
+      },
+      {
+        "type": "textarea",
+        "id": "failed-description",
+        "title": "Failed payment description"
+      },
+      {
+        "type": "textarea",
+        "id": "user-amount-text",
+        "title": "Pay what you want text"
+      },
+      {
+        "type": "text",
+        "id": "underpayment-title",
+        "title": "Underpayment title"
+      },
+      {
+        "type": "textarea",
+        "id": "underpayment-description",
+        "title": "Underpayment description"
+      },
+      {
+        "type": "textarea",
+        "id": "order-processing-text",
+        "title": "Order processing description"
+      },
+      {
+        "type": "textarea",
+        "id": "pay-text",
+        "title": "Payment page text"
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "id": "brand-name",
+    "title": "Brand name",
+    "content": "Change the brand name from ours to a different name."
+  },
+  {
+    "type": "checkbox",
+    "id": "hide-title",
+    "title": "Hide checkout title",
+    "content": "Hide the title and description of the checkout."
+  },
+  {
+    "type": "multi-input",
+    "id": "invoice",
+    "title": "Invoicing",
+    "content": "Allow users to generate invoices for their purchases.",
+    "help": "#invoicing",
+    "value": [
+      {
+        "type": "checkbox",
+        "id": "invoice-active",
+        "title": "Active"
+      },
+      {
+        "type": "text",
+        "id": "invoice-number-prefix",
+        "title": "Invoice number prefix"
+      },
+      {
+        "type": "textarea",
+        "id": "invoice-details",
+        "title": "Your business details"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "vat",
+    "title": "VAT",
+    "content": "Enable VAT calculation at checkout.",
+    "help": "#vat",
+    "value": [
+      {
+        "type": "checkbox",
+        "id": "vat",
+        "title": "Active"
+      },
+      {
+        "type": "checkbox",
+        "id": "vat-validation",
+        "title": "VAT number validation"
+      },
+      {
+        "type": "password",
+        "id": "vatsense-key",
+        "title": "Vatsense API key"
+      }
+    ]
+  },
+  {
+    "type": "number",
+    "id": "refresh-interval",
+    "title": "Exchange rates refresh interval",
+    "content": "Set the refresh interval for exchange rates in minutes. Default is 60 minutes."
+  },
+  {
+    "type": "multi-input",
+    "id": "testnets",
+    "title": "Testnets",
+    "content": "Enable testnet mode.",
+    "help": "#testnets",
+    "value": [
+      {
+        "type": "checkbox",
+        "id": "testnet-btc",
+        "title": "Bitcoin testnet"
+      },
+      {
+        "type": "checkbox",
+        "id": "testnet-eth",
+        "title": "Ethereum Sepolia"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "btc-node",
+    "title": "Bitcoin node",
+    "content": "Enter the details of your Bitcoin node.",
+    "help": "#nodes",
+    "value": [
+      {
+        "type": "password",
+        "id": "btc-node-url",
+        "title": "Node URL"
+      },
+      {
+        "type": "password",
+        "id": "btc-node-headers",
+        "title": "Node headers"
+      },
+      {
+        "type": "password",
+        "id": "btc-node-xpub",
+        "title": "Xpub"
+      },
+      {
+        "type": "checkbox",
+        "id": "btc-node-address-generation",
+        "title": "Address generation"
+      },
+      {
+        "type": "select",
+        "id": "btc-node-address-generation-method",
+        "title": "Address generation method",
+        "value": [
+          [ "", "Default" ],
+          [ "node", "Via node" ]
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "btc-node-transfer",
+        "title": "Transfer to address"
+      },
+      {
+        "type": "text",
+        "id": "btc-node-transfer-address",
+        "title": "Transfer address"
+      },
+      {
+        "type": "checkbox",
+        "id": "btc-node-refunds",
+        "title": "Refunds"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "eth-node",
+    "title": "Ethereum node",
+    "content": "Enter the details of your Ethereum node.",
+    "help": "#nodes",
+    "value": [
+      {
+        "type": "password",
+        "id": "eth-node-url",
+        "title": "Node URL"
+      },
+      {
+        "type": "password",
+        "id": "eth-node-headers",
+        "title": "Node headers"
+      },
+      {
+        "type": "select",
+        "id": "eth-network",
+        "title": "Network",
+        "value": [
+          [ "", "Mainnet" ],
+          [ "sepolia", "Sepolia" ]
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "eth-node-address-generation",
+        "title": "Address generation"
+      },
+      {
+        "type": "checkbox",
+        "id": "eth-node-transfer",
+        "title": "Transfer to address"
+      },
+      {
+        "type": "text",
+        "id": "eth-node-transfer-address",
+        "title": "Transfer address"
+      },
+      {
+        "type": "checkbox",
+        "id": "eth-node-conversion",
+        "title": "Instant conversion"
+      },
+      {
+        "type": "select",
+        "id": "eth-node-conversion-currency",
+        "title": "Instant conversion currency",
+        "value": [
+          [ "usdt", "USDT" ],
+          [ "usdc", "USDC" ],
+          [ "uni", "UNI" ],
+          [ "shib", "SHIB" ],
+          [ "link", "LINK" ]
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "eth-node-refunds",
+        "title": "Refunds"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "sol-node",
+    "title": "Solana node",
+    "content": "Enter the details of your Solana node.",
+    "help": "#nodes",
+    "value": [
+      {
+        "type": "password",
+        "id": "sol-node-url",
+        "title": "Node URL"
+      },
+      {
+        "type": "password",
+        "id": "sol-node-headers",
+        "title": "Node headers"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "wallets",
+    "title": "Wallets",
+    "content": "Enter the details of your wallets.",
+    "help": "#nodes",
+    "value": [
+      {
+        "type": "password",
+        "id": "btc-wallet-key",
+        "title": "Bitcoin wallet key"
+      },
+      {
+        "type": "password",
+        "id": "eth-wallet-key",
+        "title": "Ethereum wallet key"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "ln-node",
+    "title": "Bitcoin Lightning Network",
+    "content": "Enter the details of your Lightning Network node.",
+    "help": "#lightning-network",
+    "value": [
+      {
+        "type": "checkbox",
+        "id": "ln-node-active",
+        "title": "Active"
+      },
+      {
+        "type": "password",
+        "id": "ln-node-url",
+        "title": "Node URL"
+      },
+      {
+        "type": "password",
+        "id": "ln-macaroon",
+        "title": "Macaroon"
+      },
+      {
+        "type": "password",
+        "id": "ln-node-headers",
+        "title": "Node headers"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "gemini",
+    "title": "Gemini",
+    "content": "Advanced features powered by Gemini.",
+    "help": "#gemini",
+    "value": [
+      {
+        "type": "password",
+        "id": "gemini-key",
+        "title": "Account API key"
+      },
+      {
+        "type": "password",
+        "id": "gemini-key-secret",
+        "title": "Account API secret key"
+      },
+      {
+        "type": "checkbox",
+        "id": "gemini-address-generation",
+        "title": "Address generation"
+      },
+      {
+        "type": "checkbox",
+        "id": "gemini-transfer",
+        "title": "Transfer to address"
+      },
+      {
+        "type": "checkbox",
+        "id": "gemini-conversion",
+        "title": "Instant conversion"
+      },
+      {
+        "type": "select",
+        "id": "gemini-conversion-currency",
+        "title": "Instant conversion currency",
+        "value": [
+          [ "usd", "USD" ],
+          [ "eur", "EUR" ],
+          [ "gbp", "GBP" ],
+          [ "aud", "AUD" ],
+          [ "sgd", "SGD" ],
+          [ "hkd", "HKD" ],
+          [ "gusd", "GUSD" ]
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "gemini-sandbox",
+        "title": "Sandbox account"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "coinbase",
+    "title": "Coinbase",
+    "content": "Advanced features powered by Coinbase.",
+    "help": "#coinbase",
+    "value": [
+      {
+        "type": "password",
+        "id": "coinbase-key",
+        "title": "API key name"
+      },
+      {
+        "type": "password",
+        "id": "coinbase-key-secret",
+        "title": "Private key"
+      },
+      {
+        "type": "password",
+        "id": "coinbase-2fa",
+        "title": "2FA key"
+      },
+      {
+        "type": "checkbox",
+        "id": "coinbase-address-generation",
+        "title": "Address generation"
+      },
+      {
+        "type": "checkbox",
+        "id": "coinbase-transfer",
+        "title": "Transfer to address"
+      },
+      {
+        "type": "checkbox",
+        "id": "coinbase-conversion",
+        "title": "Instant conversion"
+      },
+      {
+        "type": "checkbox",
+        "id": "coinbase-refunds",
+        "title": "Refunds"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "notifications",
+    "title": "Email notifications",
+    "content": "Get notified by email when something happens.",
+    "value": [
+      {
+        "type": "text",
+        "id": "notifications-email",
+        "title": "Email"
+      },
+      {
+        "type": "text",
+        "id": "smtp-host",
+        "title": "Host"
+      },
+      {
+        "type": "text",
+        "id": "smtp-user",
+        "title": "Username"
+      },
+      {
+        "type": "password",
+        "id": "smtp-password",
+        "title": "Password"
+      },
+      {
+        "type": "number",
+        "id": "smtp-port",
+        "title": "Port"
+      },
+      {
+        "type": "text",
+        "id": "smtp-from",
+        "title": "Sender email"
+      },
+      {
+        "type": "text",
+        "id": "smtp-name",
+        "title": "Sender name"
+      },
+      {
+        "type": "text",
+        "id": "notifications-footer",
+        "title": "Email footer"
+      },
+      {
+        "type": "checkbox",
+        "id": "notifications-sale",
+        "title": "Payment received"
+      },
+      {
+        "type": "checkbox",
+        "id": "notifications-transfer",
+        "title": "Transfer completed"
+      },
+      {
+        "type": "checkbox",
+        "id": "notifications-conversion",
+        "title": "Conversion completed"
+      },
+      {
+        "type": "checkbox",
+        "id": "notifications-underpayment",
+        "title": "Underpayment"
+      },
+      {
+        "type": "checkbox",
+        "id": "notifications-ln",
+        "title": "Lightning Network error"
+      },
+      {
+        "type": "checkbox",
+        "id": "notifications-login",
+        "title": "Administration area login"
+      },
+      {
+        "type": "button",
+        "id": "email-test-btn",
+        "title": "Send a test email",
+        "button-text": "Send email",
+        "button-url": "#"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "custom-explorer",
+    "title": "Custom Blockchain explorer",
+    "content": "Enter the details of a Blockchain explorer's API.",
+    "help": "#custom-explorer",
+    "value": [
+      {
+        "type": "checkbox",
+        "id": "custom-explorer-active",
+        "title": "Active"
+      },
+      {
+        "type": "select",
+        "id": "custom-explorer-divider",
+        "title": "Unit type",
+        "value": [
+          [ "", "Bitcoin | Ethereum | Dogecoin" ],
+          [ 1, "Satoshi | Wei | Dogecoin" ]
+        ]
+      },
+      {
+        "type": "text",
+        "id": "custom-explorer-balance-url",
+        "title": "Balance URL"
+      },
+      {
+        "type": "text",
+        "id": "custom-explorer-balance-path",
+        "title": "Balance path"
+      },
+      {
+        "type": "text",
+        "id": "custom-explorer-transaction-url",
+        "title": "Transaction URL"
+      },
+      {
+        "type": "text",
+        "id": "custom-explorer-transaction-path",
+        "title": "Transaction paths"
+      },
+      {
+        "type": "text",
+        "id": "custom-explorer-transactions-url",
+        "title": "Transactions URL"
+      },
+      {
+        "type": "text",
+        "id": "custom-explorer-transactions-path",
+        "title": "Transactions paths"
+      },
+      {
+        "type": "text",
+        "id": "custom-explorer-address",
+        "title": "Address generator URL"
+      },
+      {
+        "type": "text",
+        "id": "custom-explorer-address-path",
+        "title": "Address generator path"
+      }
+    ]
+  },
+  {
+    "type": "multi-input",
+    "id": "checkout-custom-fields",
+    "title": "Checkout custom fields",
+    "content": "Include additional custom fields in the checkout form.",
+    "repeater": true,
+    "repeater_button": "Add custom field",
+    "help": "custom-fields",
+    "value": [
+      {
+        "type": "select",
+        "id": "checkout-custom-field-type",
+        "title": "Type",
+        "value": [
+          [ "text", "Text" ],
+          [ "textarea", "Textarea" ],
+          [ "select", "Select" ],
+          [ "checkbox", "Checkbox" ]
+        ]
+      },
+      {
+        "type": "text",
+        "id": "checkout-custom-field-name",
+        "title": "Name"
+      },
+      {
+        "type": "checkbox",
+        "id": "checkout-custom-field-required",
+        "title": "Required"
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "id": "checkout-custom-fields-title",
+    "title": "Checkout custom fields title",
+    "content": "Enter the title of the custom fields area."
+  },
+  {
+    "type": "text",
+    "id": "js-admin",
+    "title": "Custom JS",
+    "content": "Enter the URL of a .js file, to load it automatically in the admin area."
+  },
+  {
+    "type": "text",
+    "id": "css-admin",
+    "title": "Custom CSS",
+    "content": "Enter the URL of a .css file, to load it automatically in the admin area."
+  },
+  {
+    "type": "text",
+    "id": "css-pay",
+    "title": "Custom CSS - Payment page",
+    "content": "Enter the URL of a .css file, to load it automatically in the pay.php payment page."
+  },
+  {
+    "type": "number",
+    "id": "delete-pending-interval",
+    "title": "Interval for deleting pending transactions",
+    "content": "Set every how many hours pending transactions are deleted. The default is every 48 hours."
+  },
+  {
+    "type": "multi-input",
+    "id": "shopify",
+    "title": "Shopify",
+    "content": "Shopify integration.",
+    "help": "#shopify",
+    "value": [
+      {
+        "type": "text",
+        "id": "shopify-url",
+        "title": "Store URL"
+      },
+      {
+        "type": "password",
+        "id": "shopify-token",
+        "title": "Access token"
+      }
+    ]
+  },
+  {
+    "type": "password",
+    "id": "api-key",
+    "title": "API key",
+    "content": "Enter the PagoLibre API key."
+  },
+  {
+    "type": "multi-input",
+    "id": "two-fa",
+    "title": "Two-factor authentication",
+    "content": "Activate Google Authenticator and enable two-factor authentication (2FA) for logging into the admin area.",
+    "help": "#2fa",
+    "value": [
+      {
+        "type": "checkbox",
+        "id": "two-fa-active",
+        "title": "Active"
+      },
+      {
+        "type": "button",
+        "id": "two-fa-pairing",
+        "title": "Pairing",
+        "button-text": "Pairing",
+        "button-url": "#"
+      },
+      {
+        "type": "button",
+        "id": "two-fa-validation",
+        "title": "Validation",
+        "button-text": "Validation",
+        "button-url": "#"
+      },
+      {
+        "type": "text",
+        "id": "two-fa-code",
+        "title": "Code"
+      }
+    ]
+  },
+  {
+    "type": "checkbox",
+    "id": "collapse",
+    "title": "Collapse checkout",
+    "content": "Collapse the checkout cryptocurrency list."
+  },
+  {
+    "type": "checkbox",
+    "id": "disable-qrcode",
+    "title": "Disable QR code",
+    "content": "Hide the checkout QR code."
+  },
+  {
+    "type": "checkbox",
+    "id": "minify",
+    "title": "Minify JS",
+    "content": "Load the minified version of the JS files."
+  },
+  {
+    "type": "multi-input",
+    "id": "url-rewrite",
+    "title": "URL rewrite",
+    "content": "Change the default URLs with user-friendly URLs.",
+    "help": "#url-rewrite",
+    "value": [
+      {
+        "type": "text",
+        "id": "url-rewrite-checkout",
+        "title": "Checkout URL"
+      },
+      {
+        "type": "text",
+        "id": "url-rewrite-invoice",
+        "title": "Invoice URL"
+      },
+      {
+        "type": "text",
+        "id": "url-rewrite-id",
+        "title": "Payment link"
+      }
+    ]
+  }
+]

@@ -1,0 +1,991 @@
+{
+    "rates": [
+        {
+            "object": "rate",
+            "country_code": "AT",
+            "country_name": "Austria",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 20,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 13,
+                    "class": "reduced",
+                    "description": "Admissions to cultural events and amusement parks; certain agricultural supplies; cut flowers and plants for decorative use; entrance to sporting events; firewood; wine production (from farm); domestic flights",
+                    "types": false
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 10,
+                    "class": "reduced",
+                    "description": "TV licence; certain agricultural supplies; cut flowers and plants for food production; domestic refuse collection; domestic transport (excluding flights); ebooks; international and intra-community road and rail transport; newspapers and periodicals; pay and cable TV; pharmaceutical products; printed books; restaurants (ex all beverages); social services; take-away food; treatment of waste and waste water; water supplies; writers and composers; foodstuffs;",
+                    "types": "foodstuffs, books, ebooks, pharmaceuticals, passenger transport, newspapers, admission to cultural events, hotels, admission to entertainment events"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Hotel accommodation; intra-community and international transport (excluding road and rail)",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "GB",
+            "country_name": "United Kingdom",
+            "eu": false,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 20,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 5,
+                    "class": "reduced",
+                    "description": "LPG and heating oil (for domestic use only); certain energy-saving domestic installations and goods; certain medical equipment for disabled persons; certain renovation and repairs of private dwellings; certain social housing; certain social services; electricity, natural gas and district heating supplies (for domestic use only); children’s car seats",
+                    "types": "property renovations"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 5,
+                    "class": "reduced",
+                    "description": "LPG and heating oil (for domestic use only); certain energy-saving domestic installations and goods; certain medical equipment for disabled persons; certain renovation and repairs of private dwellings; certain social housing; certain social services; electricity, natural gas and district heating supplies (for domestic use only); children’s car seats",
+                    "types": "property renovations, restaurants, hotels, admission to entertainment events, admission to cultural events"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Certain construction work on new buildings; certain gold ingots, bars and coins; certain medical supplies for disabled persons; certain supplies of new buildings; children's clothing and footwear; children’s diapers; collections of domestic refuse; commercial ship and aircraft stores; cut flowers and plants for food production; domestic passenger transport; household water supplies (except distilled and mineral water); intra-community and international passenger transport; live animals destined for human consumption; motor cycle and bicycle helmets; newspapers and periodicals; prescribed pharmaceutical products; printed books; ebooks; online journals; renovations to private housing (Isle of Man only); seed supplies; sewerage services; supplies of food and drink (certain exceptions); supplies of residential caravans and houseboats; supply of animal feed; take-away food (if bought on the catering premises); certain social housing",
+                    "types": "foodstuffs, books, ebooks, pharmaceuticals, medical, passenger transport, newspapers, childrens clothing"
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "BE",
+            "country_name": "Belgium",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 21,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 12,
+                    "class": "reduced",
+                    "description": "Certain agricultural supplies; certain construction work on new buildings; certain energy products e.g. coal, lignite, coke; certain pesticides and fertilizers; certain social housing; certain tyres and inner tubes for agricultural use; restaurants (all beverages excluded); foodstuffs",
+                    "types": "restaurants"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 6,
+                    "class": "reduced",
+                    "description": "Admission to sporting events; certain agricultural supplies; certain books (including ebooks); certain medical equipment for disabled persons; certain motor vehicles (cars for the disabled); certain pharmaceutical products; certain repair and renovation of private dwellings; certain social housing; certain social services; certain undertaker and cremation services; cut flowers and plants for decorative use and food production; domestic transport of passengers; entrance to cultural events and amusement parks; firewood; firewood; hotel accommodation; intra-community and international road, rail and inland waterways transport; minor repairs (including bicycles, shoes and leather goods, clothing and household linen); newspapers and periodicals (with certain exceptions); soft drinks; use of sports facilities; water supplies; writers and composers; foodstuffs (including takeaway food); Hospitality; restaurants; cafes and publishing",
+                    "types": "ebooks, foodstuffs, books, water, pharmaceuticals, medical, newspapers, hotels, admission to cultural events, admission to entertainment events, restaurants"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Certain recycled materials and by-products; intra-community and international transport (excluding road, rail and inland waterways); certain daily and weekly newspapers",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "BG",
+            "country_name": "Bulgaria",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 20,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 9,
+                    "class": "reduced",
+                    "description": "Hotel accommodation",
+                    "types": "hotels"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international transport",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "CY",
+            "country_name": "Cyprus",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 19,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 9,
+                    "class": "reduced",
+                    "description": "Cafes; domestic passenger transport by sea; hotel accommodation; restaurants and catering services; domestic road passenger transport",
+                    "types": "hotels, restaurants"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 5,
+                    "class": "reduced",
+                    "description": "LPG (in cylinders); admission to cultural events and amusement parks; admission to sports events; books (excluding ebooks); certain agricultural supplies; certain passenger transport; certain services on intracommunity flights; certain undertaker and cremation services; children’s car seats; cut flowers for food production; domestic waste collection; hairdressing; medical equipment for disabled persons; newspapers and periodicals; non-alcoholic beverages; pharmaceutical products; renovation and repair of private dwellings; social housing; take-away food (excluding soft drinks and alcoholic beverages); use of sporting facilities; waste and waste water treatment; water supplies; works of art, collectors items and antiques; writers and composers; foodstuffs",
+                    "types": "foodstuffs, books, pharmaceuticals, medical, passenger transport, newspapers, admission to cultural events, admission to entertainment events, admission to sporting events"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Goods purchased on international flights; intra-community and international transport",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "CZ",
+            "country_name": "Czech Republic",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 21,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 15,
+                    "class": "reduced",
+                    "description": "Admission to cultural events, shows and amusement parks; admission to sporting events; certain agricultural supplies; certain domestic passenger transport; certain domestic waste collection and street cleaning; certain pharmaceuticals; children's car seats; cleaning of private households; cut flowers and plants for decorative use; domestic care services; firewood; food provided in restaurants and cafes; hotel accommodation; medical and dental care; medical equipment for disabled persons; non-alcoholic beverages; renovation and repair of private dwellings; social housing; social services; supplies to undertaker and cremation services; take-away food; treatment of waste and waste water; use of sporting facilities; water supplies; writers and composers; writers, composers and food production; foodstuffs (excluding essential child nutrition and gluten-free food)",
+                    "types": "foodstuffs, passenger transport, newspapers, admission to cultural events, admission to sporting events, admission to entertainment events, hotels"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 10,
+                    "class": "reduced",
+                    "description": "Certain books (including ebooks); certain pharmaceutical products; newspapers and periodicals; foodstuffs (selected baby food and gluten-free food)",
+                    "types": "medical, pharmaceuticals, books, baby foodstuffs"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international transport",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "DE",
+            "country_name": "Germany",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 19,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 7,
+                    "class": "reduced",
+                    "description": "Admission to cultural events; audiobooks; books (excluding books whose content is harmful to minors); certain admission to sports events; certain agricultural inputs; certain domestic passenger transport; certain timber for industrial use; cut flowers and plants for decorative use and food production; ebooks; firewood; hotel accommodation (only short-term accommodation); intra-community and international passenger transport for certain road, rail and inland waterway transportation; medical and dental care; medical equipment for disabled persons; newspapers and periodicals (except those containing content harmful to minors and/or more than 50% advertising); social services; take-away food; taxation of certain gold coins and jewellery; water supplies (excluding bottled water); writers and composers; foodstuffs; hospitality; restaurants; cafes; gas",
+                    "types": "foodstuffs, books, medical, passenger transport, newspapers, admission to cultural events, admission to entertainment events, hotels"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international transport (excluding road and rail and certain inland waterways transport)",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "DK",
+            "country_name": "Denmark",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 25,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international transport; newspapers and journals (published more than once a month)",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "EE",
+            "country_name": "Estonia",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 20,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 9,
+                    "class": "reduced",
+                    "description": "Books (excluding ebooks); hotel accommodation; medical equipment for disabled persons; newspapers and periodicals; certain pharmaceutical products",
+                    "types": "books, pharmaceuticals, medical, hotels"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international transport",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "ES",
+            "country_name": "Spain",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 21,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 10,
+                    "class": "reduced",
+                    "description": "Admission to certain cultural services; admission to sporting events (amateur sporting events only); agricultural supplies; bars, cafes, night clubs and alcoholic beverages sold therein; certain construction work on new buildings; certain medical equipment for disabled persons; certain pharmaceutical products; certain renovation and repair of private dwellings; certain social housing; certain social services; certain soft drinks; certain supplies of new buildings; cut flowers and plants for food production; domestic passenger transport; domestic waste collection; hotel accommodation; intra-community and international transport by road, rail and inland waterways; restaurants and catering services; take-away food; treatment of waste and waste water; water supplies; foodstuffs",
+                    "types": "medical, pharmaceuticals, passenger transport, admission to cultural events, admission to sporting events, admission to entertainment events"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 4,
+                    "class": "reduced",
+                    "description": "Books; ebooks; certain construction work on new buildings; certain domestic care services; certain medical equipment for the disabled; certain newspapers and periodicals; certain pharmaceutical products; certain social housing; certain social services; foodstuffs",
+                    "types": "foodstuffs, newspapers, books, ebooks"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international transport by air and sea; taxation of certain gold coins, ingots and bars",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "FI",
+            "country_name": "Finland",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 24,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 14,
+                    "class": "reduced",
+                    "description": "Certain agricultural supplies; cut flowers and plants for food production; restaurants and catering services (excluding alcoholic beverages); soft drinks; take-away food; foodstuffs (excluding live animals)",
+                    "types": "foodstuffs, restaurants"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 10,
+                    "class": "reduced",
+                    "description": "TV licence; admission to cultural events and amusement parks; admission to sports events; books (including ebooks); domestic passenger transport; domestic transport; hotel accommodation; newspapers and periodicals (sold on subscription); use of sports facilities; writers and composers; pharmaceutical products",
+                    "types": "books, pharmaceuticals, passenger transport, newspapers, admission to cultural events, admission to sporting events, admission to entertainment events, hotels"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Certain taxation of gold ingots, bars and coins; certain works of art, collectors items and antiques; intra-community and international transport; printing services for publications of non-profitmaking organisations",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "FR",
+            "country_name": "France",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 20,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 10,
+                    "class": "reduced",
+                    "description": "Admission to certain cultural services; bars, cafes and nightclubs (except supply of alcoholic beverages); certain agricultural supplies; certain cleaning in private households; certain domestic care services; certain domestic waste collection; certain non-alcoholic beverages; certain pharmaceutical products; certain renovation and repairs of private dwellings; certain social housing; certain works of art, collectors items and antiques; cut flowers and plants for decorative use; domestic passenger transport; firewood; hotel accommodation; intra-community and international road (certain exceptions) and inland waterways transport; pay/cable TV; restaurants (excluding alcoholic beverages); take-away food; writers and composers etc; admission to amusement parks (with cultural aspect); foodstuffs",
+                    "types": "passenger transport, admission to cultural events, admission to sporting events, admission to entertainment events, hotels, accommodation, restaurants"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 5.5,
+                    "class": "reduced",
+                    "description": "Admission to certain cultural events; admission to sports events; books (excluding those with pornographic or violent content); certain domestic care services; certain ebooks; certain non-alcoholic beverages; certain renovation and repair of private dwellings; certain social housing; cut flowers and plants for food production; sanitary protection for women; school canteens; water supplies, medical equipment for disabled persons; foodstuffs",
+                    "types": "medical, foodstuffs, ebooks, books"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 2.1,
+                    "class": "reduced",
+                    "description": "Admission to certain cultural events; certain livestock intended for use as foodstuff; certain newspapers and periodicals; public television licence fees; certain pharmaceutical products",
+                    "types": "pharmaceuticals, newspapers"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international transport (excluding road and inland waterways)",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "GR",
+            "country_name": "Greece",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 24,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 13,
+                    "class": "reduced",
+                    "description": "Restaurant and catering (other than entertainment centres); certain agricultural supplies; certain cut flowers and plants for food production; certain medical equipment for disabled persons; certain non-alcoholic beverages; certain pharmaceutical products; certain social services; certain take-away food; domestic care services; hotel accommodation (bed\nand breakfast); services for boarding schools; structures for disabled persons; structures providing accommodation\nfor mentally disabled persons, people with mental disorders and drug users; water supplies; foodstuffs",
+                    "types": "foodstuffs, pharmaceuticals, medical, admission to cultural events, admission to sporting events, admission to entertainment events"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 6,
+                    "class": "reduced",
+                    "description": "Supply of electricity, gas and district heating; certain books (excluding ebooks); certain newspapers and periodicals; certain theatre and\nconcert admissions; certain pharmaceutical products",
+                    "types": false
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international air and sea transport",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "HR",
+            "country_name": "Croatia",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 25,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 13,
+                    "class": "reduced",
+                    "description": "Café, restaurant and hotel services (excluding alcohol); certain agricultural inputs; certain domestic waste collection; certain undertaker and cremation services supplies; certain writers and composers services; children’s car seats; electricity supply; hotel accommodation; newspapers (other than daily published newspapers with less than 50% advertising content); periodicals (magazines other than science periodicals with less than 50% advertising content); tickets for concerts; water supplies (excluding bottled water); foodstuffs",
+                    "types": "hotels, newspapers"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 5,
+                    "class": "reduced",
+                    "description": "Admission to cinema; books (including ebooks); certain medical equipment; daily newspapers (with less than 50% advertising content); pharmaceutical products (only approved medicines prescribed by a doctor); scientific periodicals; foodstuffs (including bread, milk and infant formula)",
+                    "types": false
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international transport (excluding road and rail)",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "HU",
+            "country_name": "Hungary",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 27,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 18,
+                    "class": "reduced",
+                    "description": "Admission to certain open-air concerts; certain take-away food; foodstuffs",
+                    "types": "foodstuffs, hotels"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 5,
+                    "class": "reduced",
+                    "description": "Books (excluding ebooks); certain medical equipment for disabled persons (excluding repair); certain social housing; certain supplies of new buildings; certain writers and composers services; district heating; internet access services; newspapers and periodicals; pharmaceutical products (intended for human use); restaurant and catering services (food prepared on site and non-alcoholic beverages); foodstuffs;  accommodation services from hotels, B&B and house sharing",
+                    "types": "books, pharmaceuticals, medical"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international transport",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "IE",
+            "country_name": "Ireland",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 23,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 13.5,
+                    "class": "reduced",
+                    "description": "Admission to amusement parks; bars and cafes; certain agricultural supplies; certain books; certain pharmaceutical products; certain social housing; children's car seats; cleaning in private households; collection of domestic waste; concrete and concrete blocks; construction work on new buildings; cut flowers and plants for decorative use; driving schools; firewood; hairdressing; health studio services; heating oil; hotel accommodation; medical and dental care; minor repairs of bicycles, shoes and leather goods and household linen; photography services; renovation and repair of private dwellings; restaurant and catering (excluding beverages); routine cleaning of immovable property; services supplied by jockeys; services supplied by veterinary surgeons; short term hire of certain passenger vehicles; social housing; supplies of natural gas, electricity and district heating; supply of immovable property; take-away food; tourism services; treatment of waste and waste water; works of art and antiques; foodstuffs",
+                    "types": "medical, admission to cultural events, admission to entertainment events, hotels, restaurants"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 9,
+                    "class": "reduced",
+                    "description": "Ebooks and digital publications; hairdressing; newspapers and periodicals; foodstuffs",
+                    "types": "ebooks, newspapers"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 4.8,
+                    "class": "reduced",
+                    "description": "Certain agricultural supplies; livestock intended for use in the preparation of foodstuffs",
+                    "types": "foodstuffs"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Certain animal feed; certain books; certain feminine hygiene products; certain fertilizers; certain food supplies for food production; certain medical equipment; certain medicines for human consumption; certain medicines for veterinary use (excluding pets); childrens’ nappies; clothing and footwear for children; cut flowers and plants for food production; intra-community and international transport; supplies of seeds and plants for use in food production; wax candles (undecorated); foodstuffs",
+                    "types": "admission to sporting events, books, childrens clothing"
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "IT",
+            "country_name": "Italy",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 22,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 10,
+                    "class": "reduced",
+                    "description": "Admission to certain sports events; admission to cultural events; alcoholic beverages in bars and cafes; certain agricultural supplies; certain construction work on new buildings; certain pharmaceutical products; certain social housing; certain waste water treatment; collection of domestic waste; cut flowers and plants for decorative use and food production; domestic passenger transport; energy products (excluding district heating); firewood; hotel accommodation; renovation and repair of private dwellings; restaurants; take-away food; water supplies; foodstuffs;  certain supplies of new buildings (non-luxurious)",
+                    "types": "pharmaceuticals, passenger transport, admission to cultural events, admission to entertainment events, hotels, restaurants"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 5,
+                    "class": "reduced",
+                    "description": "Certain passenger transport; certain social services; foodstuffs",
+                    "types": false
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 4,
+                    "class": "reduced",
+                    "description": "TV licence; certain agricultural supplies; certain books; certain medical equipment for disabled persons; certain social housing; certain social services; construction work on new buildings (for first housing); ebooks with an international standard book number (ISBN); motor vehicles for the disabled; newspapers and certain periodicals; online journals newspapers; supplies of new buildings (for first housing); certain food products",
+                    "types": "foodstuffs, medical, books, ebooks"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international transport",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "LT",
+            "country_name": "Lithuania",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 21,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 9,
+                    "class": "reduced",
+                    "description": "Books; ebooks; maps; journals; district heating; firewood; hotel accommodation; certain domestic passenger transport",
+                    "types": "books, ebooks"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 5,
+                    "class": "reduced",
+                    "description": "Medical equipment for disabled persons; pharmaceutical products;  newspapers and periodicals (certain exceptions)",
+                    "types": "pharmaceuticals, medical"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international transport",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "LU",
+            "country_name": "Luxembourg",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 16,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 13,
+                    "class": "reduced",
+                    "description": "Administration of credit and credit guarantees by a person or organisation other than that granting the credit; heat, cooling and steam with the exception of district heating; printed advertising matter; safe custody and administration of securities; solid mineral fuels, mineral oils and wood intended for use as fuel with the exception of wood for heating; washing and cleaning products; certain wines",
+                    "types": "wine, domestic fuel, advertising"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 7,
+                    "class": "reduced",
+                    "description": "LPG; certain works of art and antiques; clothing and household linen; cut flowers and plants for decorative use; district heating; electricity; firewood; hairdressing; minor repairs of bicycles; natural gas; shoes and leather goods; cleaning in private households",
+                    "types": "bikes, domestic services"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 3,
+                    "class": "reduced",
+                    "description": "Admission to cultural events and amusement parks; admission to sports events; agricultural supplies (excluding pesticides); bars, cafes and nightclubs, cut flowers and plants for food production; certain books (including ebooks); certain construction work on new buildings; certain goods and services for consumption on-board passenger transport; certain medical equipment for disabled persons; certain newspapers and periodicals; certain pay TV/cable TV; certain pharmaceutical products; certain supplies of new buildings; certain telephone services; certain works of art, collectors items and antiques; certain writers and composers services (royalties); children's clothing and footwear; collection of domestic waste; domestic passenger transport; hotel accommodation; raw wool; restaurants (excluding alcoholic beverages); soft drinks; take-away food; treatment of waste and waste water; undertaker and cremation services; use of sports facilities; water supplies; foodstuffs",
+                    "types": "books, foodstuffs, pharmaceuticals, medical, passenger transport, newspapers, admission to cultural events, admission to sporting events, admission to entertainment events, hotels, restaurants, ebooks"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international transport",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "LV",
+            "country_name": "Latvia",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 21,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 12,
+                    "class": "reduced",
+                    "description": "Books (excluding ebooks); district heating; domestic passenger transport; hotel accommodation; medical products for disabled persons; newspaper and periodicals; pharmaceutical products; food products for infants",
+                    "types": "books, pharmaceuticals, medical, newspapers, hotels"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 5,
+                    "class": "reduced",
+                    "description": "A range of locally produced vegetables and fruit; ebooks",
+                    "types": "ebooks"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international transport",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "MT",
+            "country_name": "Malta",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 18,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 7,
+                    "class": "reduced",
+                    "description": "Use of sporting facilities; hotel accommodation",
+                    "types": "hotels"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 5,
+                    "class": "reduced",
+                    "description": "Admission to certain cultural events; books (including ebooks); domestic care services; minor repairs of shoes and leather goods, bicycles, clothing, and household linens; newspapers and periodicals; supply of electricity; medical equipment for disabled persons",
+                    "types": "books, medical, newspapers, admission to cultural events, ebooks"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Cut flowers and plants for food production; domestic passenger transport (excluding road); gold ingots and bars; intra-community and international transport; live animals for human consumption; prescribed medicines; certain supplies of food for human consumption (excluding certain processed and pre-cooked foods)",
+                    "types": "foodstuffs, pharmaceuticals"
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "NL",
+            "country_name": "Netherlands",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 21,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 9,
+                    "class": "reduced",
+                    "description": "Admission to cultural events and amusement parks; admission to sports events; bars, cafes and night clubs; books (including ebooks); certain cleaning of private households; certain medical equipment for disabled persons; certain pharmaceutical products; certain renovation and repair of private dwellings; certain soft drinks; certain works of art, collectors items and antiques; clothing and household linen; cut flowers and plants for decorative use (certain exclusions) and food production; domestic passenger transport (excluding air travel); hairdressing; hotel accommodation; intra-community and international road, rail and inland waterway passenger transport; minor repairs of bicycles; newspapers and periodicals; restaurants (excluding alcoholic beverages); shoes and leather goods; take-away food; use of sports facilities; water supplies; writers and composers; foodstuffs (excluding foodstuffs for animal consumption)",
+                    "types": "foodstuffs, books, pharmaceuticals, medical, passenger transport, admission to cultural events, admission to entertainment events, hotels, accommodation"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international passenger transport by air and sea; taxation of gold coins",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "PL",
+            "country_name": "Poland",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 23,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 8,
+                    "class": "reduced",
+                    "description": "Admission to cultural events and amusement parks; admission to sports events; certain agricultural supplies; certain bars and cafes (restaurant service only); certain construction work on new buildings; certain newspapers and periodicals; certain pay TV/cable TV; certain renovation and repair of private dwellings; certain supplies of new buildings; certain take-away food; children's car seats; children’s diapers (disposable); clothing and household linen; collection of domestic waste; cut plants and flowers for decorative use and food production (certain at 5%); domestic passenger transport; firewood; hairdressing; hotel accommodation; intra-community and international passenger transport by inland waterway and road; medical equipment for disabled persons; minor repairs of bicycles; pharmaceutical products; restaurants (excluding alcoholic and certain other beverages); shoes and leather goods; social housing; treatment of waste water; undertaker and cremation services; use of sports facilities; water supplies; writers and composers; foodstuffs",
+                    "types": "pharmaceuticals, medical, passenger transport, newspapers, hotels, restaurants, admission to cultural events, admission to sporting events, admission to entertainment events"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 5,
+                    "class": "reduced",
+                    "description": "Certain agricultural supplies; certain books and specialist periodicals (including ebooks); certain food for consumption on-board passenger transportation; certain fruit juices; foodstuffs",
+                    "types": "foodstuffs"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international passenger transport (excluding inland waterway and road transport)",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "PT",
+            "country_name": "Portugal",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 23,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 13,
+                    "class": "reduced",
+                    "description": "Admission to certain cultural events; certain agricultural supplies; certain goods and services for consumption on-board transportation; diesel for agriculture; mineral water; restaurant & cafe food; wine; foodstuffs",
+                    "types": "agricultural supplies"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 6,
+                    "class": "reduced",
+                    "description": "TV licence; certain agricultural supplies; certain books (including ebooks); certain goods for consumption on-board transportation; certain legal services; certain medical and dental care; certain newspapers and periodicals; certain pharmaceutical products; certain social services; certain works of art, collectors items and antiques; children’s car seats; children’s diapers; collection of domestic waste, minor repairs of bicycles; construction work on new buildings; cut flowers and plants for decorative use and food production; domestic care services; domestic passenger transport; firewood; fruit juices; hotel accommodation; medical equipment for disabled persons; renovation and repair of private dwellings; social housing; treatment of waste water; water supplies; foodstuffs",
+                    "types": "foodstuffs, books, pharmaceuticals, medical, newspapers, hotels, passenger transport"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international passenger transport",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "RO",
+            "country_name": "Romania",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 19,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 9,
+                    "class": "reduced",
+                    "description": "Certain agricultural supplies; certain beer; certain goods and services for consumption on-board transportation. ; cut flowers and plants for food production; hotel accommodation; medical equipment for disabled persons; pharmaceutical products; soft drinks; water supplies; foodstuffs",
+                    "types": "books, pharmaceuticals, medical, newspapers, admission to cultural events, admission to entertainment events, hotels, foodstuffs"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 5,
+                    "class": "reduced",
+                    "description": "Admission to amusement parks; admission to cultural events; admission to sporting events; bars, cafes and nightclubs (excluding certain alcoholic beverages); books; ebooks; hotel accommodation; newspapers and periodicals; restaurants and catering services (excluding certain alcoholic beverages); take-away food; social housing",
+                    "types": "social housing, ebooks"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international passenger transport",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "SE",
+            "country_name": "Sweden",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 25,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 12,
+                    "class": "reduced",
+                    "description": "Certain works of art, collectors items and antiques; hotel accommodation; minor repair of bicycles, shoes and leather goods, clothing and household linen; non-alcoholic beverages; restaurant and catering services; take-away food; foodstuffs",
+                    "types": "foodstuffs"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 6,
+                    "class": "reduced",
+                    "description": "Admission to cultural events (excluding cinema); admission to sports events; books; ebooks; newspapers and certain periodicals; use of sports facilities; writers and composers; domestic passenger transport",
+                    "types": "books, ebooks"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international passenger transport; printing and other services related to the production of magazines for non-profit making organisations; medicines supplied on prescription or sold to hospitals",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "SI",
+            "country_name": "Slovenia",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 22,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 9.5,
+                    "class": "reduced",
+                    "description": "Admission to sports events; agricultural supplies; books (excluding ebooks); certain construction work for new buildings; certain supplies of new buildings; certain take-away food; cleaning of private dwellings; cultural events and theme parks; cut flowers and plants for decorative use and food production; domestic care services; domestic passenger transport; domestic waste collection; hairdressing; hotel accommodation; intra-community and international road passenger transport; medical equipment for disabled persons; minor repairs of bicycles, clothes and household linen, shoes and leather goods; newspapers and periodicals; pharmaceutical products; renovation and repairs of private dwellings; restaurants (preparation of meals only); social housing; soft drinks; treatment of waste and waste water; undertaker and cremation services; use of sports facilities; water supplies; writers and composers; foodstuffs",
+                    "types": "foodstuffs, books, pharmaceuticals, medical, newspapers, admission to sporting events, admission to cultural events, admission to entertainment events, hotels"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 5,
+                    "class": "reduced",
+                    "description": "Books; ebooks",
+                    "types": "books, ebooks"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international transport (excluding road transport)",
+                    "types": false
+                }
+            ]
+        },
+        {
+            "object": "rate",
+            "country_code": "SK",
+            "country_name": "Slovakia",
+            "eu": true,
+            "standard": {
+                "object": "tax_rate",
+                "rate": 20,
+                "class": "standard",
+                "description": "",
+                "types": false
+            },
+            "other": [
+                {
+                    "object": "tax_rate",
+                    "rate": 10,
+                    "class": "reduced",
+                    "description": "Books (excluding ebooks); certain medical equipment for disabled persons; certain pharmaceutical products; foodstuffs;  hotel and accommodation ",
+                    "types": "books, foodstuffs, medical, pharmaceuticals, admission to cultural events, admission to entertainment events"
+                },
+                {
+                    "object": "tax_rate",
+                    "rate": 0,
+                    "class": "zero",
+                    "description": "Intra-community and international passenger transport",
+                    "types": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1810 @@
+
+/*
+* 
+* ==========================================================
+* ADMIN.SCSS
+* ==========================================================
+*
+* Main style file of the administration area. Written in SCSS. 
+*
+*/
+
+@import "shared.scss";
+
+@keyframes pagoL-lightbox-animation {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 
+
+GLOBAL
+==========================================================
+
+*/
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+.pagoL-loading-global {
+    position: absolute;
+    z-index: 99995;
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    margin-left: -15px;
+}
+
+/* 
+
+ELEMENTS
+==========================================================
+
+*/
+
+.pagoL-nav-wide {
+    display: flex;
+    align-items: center;
+}
+
+.pagoL-color-cnt {
+    position: relative;
+
+    i {
+        position: absolute;
+        right: 12px;
+        top: 25px;
+        font-size: 10px;
+        cursor: pointer;
+        z-index: 2;
+        transition: $transition;
+
+        &:hover {
+            color: $color-red;
+        }
+    }
+}
+
+[data-type="multi-input"] {
+    margin-bottom: -15px;
+
+    input, select, textarea {
+        margin: 10px 0 17px 0 !important;
+    }
+
+    [data-type="checkbox"], [data-type="button"] {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        span {
+            max-width: 350px !important;
+            width: auto !important;
+            padding-top: 7px;
+        }
+
+        input {
+            margin-top: 0 !important;
+        }
+    }
+
+    .pagoL-btn {
+        background: #ffffff;
+        color: #1f3f3b;
+        border: 1px solid #d4d4d4;
+        margin-bottom: 15px;
+
+        &:hover {
+            border-color: $color-main;
+            color: $color-main;
+            background: none;
+        }
+
+        &.pagoL-loading:before {
+            color: $color-main;
+        }
+    }
+}
+
+[data-type="upload-file"] {
+    .pagoL-btn-icon {
+        min-width: 40px;
+        height: 40px;
+        border: 1px solid $border-color;
+        margin-left: 5px;
+        background-color: $background-gray;
+        opacity: 1;
+
+        i {
+            line-height: 46px;
+            color: $color-gray;
+            transition: $transition;
+        }
+
+        &:hover {
+            border-color: $color-main;
+
+            i {
+                color: $color-main;
+            }
+        }
+    }
+}
+
+.pagoL-flex .pagoL-input {
+    min-width: 0;
+
+    input, select {
+        min-width: 0;
+    }
+}
+
+.pagoL-table {
+    margin: 0 0 20px 0;
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    th {
+        white-space: nowrap;
+        padding: 9px 15px;
+        text-align: left;
+        border-bottom: 1px solid $border-color;
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: 600;
+        color: $color-black;
+        letter-spacing: .3px;
+    }
+
+    td {
+        white-space: nowrap;
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid $border-color;
+        color: $color-black;
+        font-size: 15px;
+        height: 30px;
+        letter-spacing: .3px;
+        transition: $transition;
+    }
+
+    .pagoL-title {
+        font-weight: 500;
+
+        & + .pagoL-text {
+            line-height: 15px;
+            margin-top: 5px;
+        }
+    }
+
+    .pagoL-title, .pagoL-text, .pagoL-link {
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    tr:hover td {
+        cursor: pointer;
+        background-color: $background-gray;
+    }
+
+    img {
+        max-height: 35px;
+        margin-right: 15px;
+    }
+
+    .pagoL-flex {
+        justify-content: flex-start;
+    }
+
+    .pagoL-text:empty {
+        display: none;
+    }
+}
+
+.pagoL-search {
+    position: relative;
+
+    input {
+        padding-right: 60px;
+
+        &:focus + input + i {
+            color: $color-main;
+        }
+    }
+
+    i {
+        position: absolute;
+        right: 15px;
+        font-size: 18px;
+        line-height: 0;
+        top: 50%;
+        margin-top: -10px;
+        width: 20px;
+        height: 20px;
+        color: $color-gray;
+        transition: $transition;
+
+        &.sb-loading {
+            margin-top: 0;
+        }
+    }
+}
+
+.pagoL-mobile-menu > i {
+    display: none;
+}
+
+.pagoL-repater-line, .pagoL-upload-image {
+    position: relative;
+
+    > i {
+        position: absolute;
+        right: 0;
+        top: 38px;
+        font-size: 10px;
+        color: $color-gray;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        text-align: right;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            color: $color-red;
+        }
+    }
+}
+
+.pagoL-repater-line {
+    hr {
+        height: 1px;
+        margin: 15px 0 30px 0;
+        background: $border-color;
+    }
+}
+
+.pagoL-upload-image {
+
+    .pagoL-btn-icon {
+        margin: 0;
+        width: 100%;
+        height: 150px;
+        line-height: 160px;
+        background-size: cover;
+        background-position: center center;
+
+        i {
+            color: #7f9494;
+
+            &:before {
+                font-size: 18px;
+                line-height: 160px;
+            }
+        }
+
+        &[style] {
+            i {
+                display: none;
+            }
+
+            & + i {
+                display: block;
+            }
+        }
+    }
+
+    input {
+        display: none !important;
+    }
+
+    > i {
+        top: calc(50% - 12.5px);
+        right: -20px;
+        display: none;
+    }
+}
+
+/* 
+
+ADMIN AREA
+==========================================================
+
+*/
+
+.pagoL-nav-filters {
+    padding: 0 10px;
+    display: none;
+    align-items: center;
+
+    .pagoL-input {
+        margin-right: 25px;
+    }
+
+    &.pagoL-active {
+        display: flex;
+        animation: pagoL-fade-in .5s;
+    }
+}
+
+input.pagoL-filter-date, input.pagoL-filter-date-2 {
+    min-width: 0;
+    width: 100px;
+    text-align: center;
+}
+
+input.pagoL-filter-date-2 {
+    margin-left: 10px !important;
+}
+
+.pagoL-filter-checkout > p {
+    max-width: 100px;
+}
+
+.pagoL-admin {
+    max-width: 1200px;
+    color: #000;
+
+    main {
+        padding: 0;
+        position: relative;
+
+
+        > div {
+            min-height: 50px;
+
+            &.pagoL-active {
+                animation: pagoL-fade-in .5s;
+            }
+
+            &:not(.pagoL-active) {
+                display: none;
+            }
+
+            &.pagoL-loading:before {
+                top: 15px;
+                left: 20px;
+            }
+        }
+    }
+
+    .pagoL-input {
+
+        span {
+            max-width: 420px;
+            width: 420px;
+            flex-shrink: 0;
+        }
+
+        .pagoL-setting-input {
+            width: 100%;
+            padding-right: 0;
+        }
+
+        .pagoL-setting-content {
+            max-width: 420px;
+        }
+
+        .pagoL-icon-help {
+            transform: translateY(1px);
+            margin: 0 0 0 5px;
+            font-size: 12px;
+            color: #b1c2d1;
+            text-decoration: none;
+            display: inline-block;
+
+            &:hover {
+                color: $color-main;
+            }
+        }
+    }
+
+    &.pagoL-agent {
+        #pagoL-create-checkout, #pagoL-save-checkout, #pagoL-delete-checkout {
+            display: none !important;
+        }
+    }
+}
+
+.pagoL-settings-title {
+    padding: 60px 0 0 0 !important;
+
+    & + div {
+        border-top: none !important;
+    }
+}
+
+#pagoL-checkouts-form {
+    .pagoL-input {
+        align-items: center;
+        margin-top: 15px;
+
+        &#pagoL-checkout-title {
+            margin-top: 4px;
+        }
+
+        > span {
+            transition: $transition;
+        }
+
+        &:hover > span {
+            transform: translateX(7px);
+        }
+    }
+
+    #pagoL-checkout-payment-link a {
+        padding: 0;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .pagoL-repater-line {
+        hr {
+            margin: 4px 0 0 0;
+            background: none;
+        }
+
+        i {
+            right: -20px;
+            top: 11px;
+        }
+    }
+
+    .pagoL-btn-repater {
+        margin: 15px 0 0 0;
+        font-size: 14px;
+        font-weight: 500;
+
+        &:not(:hover) {
+            color: $color-gray;
+        }
+    }
+
+    .pagoL-flex .pagoL-input + .pagoL-input {
+        margin-top: 15px !important;
+    }
+}
+
+#checkout-downloads {
+    align-items: flex-start !important;
+
+    .pagoL-setting-input {
+        text-align: right;
+    }
+
+    input:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+[data-area="settings"] {
+    .pagoL-input + .pagoL-input, .pagoL-input + .pagoL-flex, .pagoL-flex + .pagoL-input {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid $border-color;
+    }
+}
+
+.pagoL-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    background: $white;
+    border-right: 1px solid $border-color;
+    z-index: 999995;
+
+    > div {
+        padding: 10px 0 10px 30px;
+        margin-bottom: 25px;
+    }
+
+    .pagoL-logo {
+        display: block;
+        max-height: 40px;
+        margin: 15px 30px 15px 0;
+        max-width: calc(100% - 30px);
+    }
+
+    .pagoL-logo-icon {
+        display: none;
+        margin: 0;
+        height: 25px;
+        max-height: 25px;
+    }
+
+    .pagoL-link {
+        font-weight: 600;
+    }
+
+    .pagoL-bottom {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 190px;
+        margin: 0;
+        z-index: 2;
+
+        .pagoL-btn-icon {
+            margin-right: -10px;
+        }
+
+        > .pagoL-btn {
+            display: none;
+            margin: 0 0 30px 0;
+        }
+    }
+}
+
+.pagoL-nav {
+    > div {
+        font-weight: 600;
+        cursor: pointer;
+        line-height: 45px;
+        font-size: 16px;
+        border-right: 2px solid $white;
+        transition: $transition;
+        display: flex;
+        align-content: center;
+        align-items: center;
+
+        &:hover, &.pagoL-active {
+            border-color: $color-main !important;
+            color: $color-main;
+        }
+
+        &:active i {
+            transform: scale(.95);
+        }
+    }
+
+    i {
+        display: inline-block;
+        margin-right: 30px;
+        font-size: 20px;
+        line-height: 0;
+    }
+}
+
+.pagoL-body {
+    padding: 30px 30px 60px 280px;
+}
+
+.pagoL-info-card {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    border-radius: 4px;
+    padding: 10px 30px;
+    background: $color-green;
+    color: $white;
+    text-align: center;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    z-index: 9999995;
+    display: none;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 25px;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    color: $white;
+
+    span, a {
+        text-decoration: underline;
+        color: $white;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &:not(:empty) {
+        display: block;
+        animation: pagoL-fade-bottom .5s;
+    }
+
+    &.pagoL-info-card-error {
+        background: $color-red;
+    }
+
+    &.pagoL-info-card-info {
+        background: $color-gray;
+    }
+}
+
+.pagoL-top {
+    padding-bottom: 50px;
+
+    & + div {
+        margin-top: 0 !important;
+    }
+}
+
+.pagoL-bottom {
+    padding-top: 50px;
+
+    &:empty {
+        display: none !important;
+    }
+}
+
+.pagoL-area-transactions {
+    max-width: none;
+}
+
+.pagoL-area-settings #pagoL-save-settings, .pagoL-area-checkouts #pagoL-create-checkout, .pagoL-area-transactions #pagoL-request-payment {
+    display: block;
+    animation: pagoL-fade-bottom .5s;
+}
+
+.pagoL-area-create-checkout {
+    #pagoL-create-checkout, #pagoL-table-checkouts {
+        display: none;
+    }
+
+    #pagoL-checkouts-form {
+        display: block;
+        animation: pagoL-fade-in .5s;
+    }
+}
+
+#pagoL-checkouts-form {
+    display: none;
+
+    .pagoL-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+#pagoL-save-checkout {
+    min-width: 134px;
+}
+
+#pagoL-delete-checkout {
+    display: none;
+}
+
+#pagoL-checkout-embed-code, #pagoL-checkout-payment-link, #pagoL-checkout-shortcode, #pagoL-payment-request-url-box {
+    position: relative;
+    display: none;
+
+    div, a {
+        width: 100%;
+        min-width: 0;
+        padding: 15px 40px 15px 15px;
+        background: $color-gray;
+        color: rgba(255, 255, 255,.8);
+        border-radius: 3px;
+        font-size: 13px;
+        font-weight: 400;
+        text-decoration: none;
+        overflow: hidden;
+    }
+
+    i {
+        position: absolute;
+        right: 0;
+        top: 5px;
+        color: $white;
+        background-color: $color-gray;
+        width: 35px;
+        height: 35px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 3px;
+        z-index: 9;
+
+        &:hover {
+            color: $color-main;
+        }
+    }
+}
+
+[data-checkout-id] #pagoL-delete-checkout {
+    display: inline-block;
+
+    &:hover {
+        color: $color-red !important;
+        border-color: $color-red !important;
+        background-color: rgba(155, 155, 155, .1) !important;
+    }
+}
+
+[data-checkout-id] #pagoL-checkout-embed-code, [data-checkout-id] #pagoL-checkout-payment-link, [data-checkout-id] #pagoL-checkout-shortcode, #pagoL-payment-request-url-box {
+    display: flex;
+}
+
+#pagoL-payment-request-url-box i {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#pagoL-table-checkouts {
+    max-width: 500px;
+
+    tr:first-child td {
+        border-top: 1px solid $border-color;
+        max-width: 100px;
+        width: 100px;
+    }
+
+    td:last-child {
+        text-align: right;
+    }
+
+    .pagoL-title span:first-child {
+        padding-right: 10px;
+        opacity: .7;
+    }
+}
+
+#pagoL-table-balances {
+    margin-top: 23px;
+
+    td {
+        font-weight: 600;
+    }
+
+    .pagoL-title + .pagoL-text {
+        margin-top: 5px;
+        font-weight: 400;
+        line-height: 15px;
+    }
+
+    .pagoL-balance {
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+
+#pagoL-table-transactions {
+
+    [data-field="status"], .pagoL-td-status, [data-field="amount"], .pagoL-td-amount {
+        max-width: 140px;
+        width: 140px;
+    }
+
+    [data-field="date"], .bcx-td-time {
+        max-width: 150px;
+        width: 150px;
+    }
+
+    .pagoL-td-time .pagoL-title, .pagoL-td-amount .pagoL-title div + div {
+        font-weight: 400;
+    }
+
+    .pagoL-td-amount {
+        padding: 0 15px;
+
+        .pagoL-title {
+            margin: -7px 0;
+        }
+    }
+
+    th:last-child, td:last-child {
+        max-width: 10px;
+        width: 10px;
+        padding: 0 15px 0 0;
+        position: relative;
+    }
+
+    .pagoL-link {
+        text-decoration: none;
+        color: $color-black;
+        display: block;
+
+        &:hover {
+            color: $color-main;
+        }
+    }
+
+    .bcx-td-time span + span {
+        font-weight: 400;
+        display: block;
+        margin-top: 5px;
+    }
+
+    &.pagoL-loading {
+        height: 50px;
+
+        tbody, thead {
+            display: none;
+        }
+    }
+
+    .pagoL-not-found {
+        margin: 15px;
+    }
+
+    .pagoL-transaction-menu-btn {
+        line-height: 34px;
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        top: 50%;
+        margin-top: -15px;
+
+        &:hover, &.pagoL-active {
+            color: $color-main;
+        }
+
+        & + .pagoL-ul {
+            display: block;
+            right: 35px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &.pagoL-loading {
+            margin-left: -7.5px;
+        }
+    }
+}
+
+.pagoL-status-C, .pagoL-status-P, .pagoL-status-R, .pagoL-status-X {
+    position: relative;
+    padding-left: 25px;
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: $color-green;
+        left: 0;
+        top: 50%;
+        margin-top: -5px;
+        border-radius: 50%;
+    }
+
+    &.pagoL-status-P:before {
+        background-color: $color-orange;
+    }
+
+    &.pagoL-status-R:before {
+        background-color: $color-red;
+    }
+
+    &.pagoL-status-X:before {
+        background-color: #f6d000;
+    }
+}
+
+[data-status="R"] td:not(:last-child) {
+    opacity: .6;
+}
+
+.bcx-td-id, th[data-field="id"] {
+    max-width: 15px;
+    width: 15px;
+}
+
+.pagoL-td-id {
+    font-size: 11px !important;
+    padding: 15px 0 15px 15px !important;
+}
+
+.pagoL-td-amount .pagoL-text {
+    text-transform: capitalize;
+}
+
+.pagoL-area-transactions {
+    .pagoL-icon-search.pagoL-loading:before {
+        opacity: 0 !important;
+    }
+}
+
+#pagoL-version {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+[data-area="balance"].pagoL-loading:not(.pagoL-loading-first) {
+    text-indent: unset;
+
+    * {
+        opacity: 1 !important;
+    }
+
+    &:before {
+        display: none;
+    }
+}
+
+[data-area="transactions"] > .pagoL-nav-wide {
+    .pagoL-search {
+        flex-shrink: 0;
+        flex-grow: 1;
+        margin-right: 10px;
+    }
+
+    .pagoL-btn-icon {
+        width: 39px;
+        min-width: 39px;
+        height: 39px;
+
+        i {
+            line-height: 46px;
+            width: 39px;
+        }
+    }
+}
+
+.pagoL-not-found {
+    font-size: 15px;
+    white-space: nowrap;
+    opacity: .8;
+    letter-spacing: .3px;
+}
+
+.pagoL-transaction-details-list {
+    margin-bottom: 15px;
+}
+
+/* 
+
+MISCELLANEOUS
+==========================================================
+
+*/
+
+.pagoL-login, .pagoL-installation, .pagoL-cloud-box {
+    .pagoL-input {
+        align-items: center;
+    }
+
+    img {
+        max-width: 250px;
+        margin-bottom: 50px;
+    }
+}
+
+#pagoL-lightbox {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 999995;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+
+    > div {
+        position: fixed;
+        border-radius: 4px;
+        padding: 0;
+        background: $white;
+        box-shadow: $box-shadow;
+        width: 100%;
+        max-width: 700px;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+    }
+
+    .pagoL-top {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 30px;
+
+        #pagoL-lightbox-close, .pagoL-btn + .pagoL-btn {
+            margin-left: 15px;
+        }
+    }
+
+    [data-name] .pagoL-loading {
+        width: 20px;
+        height: 20px;
+    }
+
+    &.pagoL-active {
+        display: block;
+        animation: pagoL-lightbox-animation 0.5s;
+    }
+}
+
+#pagoL-lightbox-main {
+    padding: 0 20px 20px 20px;
+
+    .pagoL-input {
+        align-items: center;
+
+        span {
+            padding-right: 30px;
+        }
+
+        & + .pagoL-btn {
+            margin-top: 30px;
+        }
+    }
+}
+
+.pagoL-lightbox-buttons {
+    justify-content: flex-end;
+
+    > div {
+        display: block;
+    }
+}
+
+#pagoL-lightbox-loading {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.75);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999995;
+    display: none;
+
+    &.pagoL-active {
+        display: block;
+        animation: pagoL-fade-in 0.5s;
+    }
+}
+
+#pagoL-cancel-btn {
+    background-color: $color-red;
+
+    &:hover {
+        background-color: $color-red-hover;
+    }
+}
+
+[data-lightbox-id="confirm"] {
+    &#pagoL-lightbox > div {
+        max-width: 550px;
+    }
+
+    #pagoL-lightbox-close {
+        display: none !important;
+    }
+
+    #pagoL-lightbox-main {
+        overflow: hidden !important;
+    }
+}
+
+.pagoL-text-list > div {
+    color: $color-black;
+
+    > div:first-child {
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+
+    > div:last-child {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .pagoL-title, .pagoL-text {
+        font-weight: 400;
+        font-size: 15px;
+        display: inline-block;
+    }
+
+    .pagoL-text {
+        margin: 0 !important;
+        display: block;
+    }
+
+    a {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        color: $color-black;
+    }
+
+    & + div {
+        margin-top: 15px;
+    }
+}
+
+#pagoL-upload-form {
+    position: absolute;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+/* 
+
+# SHOP
+==========================================================
+
+*/
+
+[data-name="data-license-key"] {
+    > div:last-child {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .pagoL-label {
+        font-size: 12px;
+        line-height: 13px;
+    }
+
+    .pagoL-btn-text {
+        margin: 0 10px
+    }
+}
+
+[data-area="analytics"] {
+    .pagoL-nav-wide {
+        justify-content: space-between;
+    }
+
+    .pagoL-nav-filters {
+        display: flex;
+        padding: 0;
+    }
+
+    #pagoL-filters {
+        display: none;
+    }
+}
+
+#pagoL-analytics-earnings, #pagoL-analytics-sales {
+    .pagoL-title {
+        font-size: 18px;
+        line-height: 15px;
+        white-space: nowrap;
+    }
+
+    .pagoL-text {
+        margin-top: 14px !important;
+        line-height: 10px;
+        white-space: nowrap;
+    }
+}
+
+#pagoL-analytics-sales {
+    padding-left: 40px;
+    padding-right: 30px;
+}
+
+#pagoL-analytics-chart.pagoL-loading canvas {
+    visibility: hidden;
+}
+
+#shop-page .pagoL-setting-content p {
+    overflow: hidden;
+}
+
+/*  
+
+RTL
+==========================================================
+
+*/
+
+.pagoL-rtl, .pagoL-rtl textarea, .pagoL-rtl input, .pagoL-rtl ul, .pagoL-rtl ul li {
+    direction: rtl;
+    text-align: right;
+}
+
+.pagoL-rtl {
+    float: right;
+
+    .pagoL-body {
+        padding: 30px 280px 60px 30px;
+    }
+
+    .pagoL-sidebar {
+        left: auto;
+        right: 0;
+        border-right: none;
+        border-left: 1px solid #d4d4d4;
+
+        > div {
+            padding: 10px 30px 10px 0;
+        }
+
+        .pagoL-bottom {
+            left: auto;
+            right: 0;
+
+            .pagoL-btn-icon {
+                margin-right: 0;
+                margin-left: -10px;
+            }
+        }
+    }
+
+    .pagoL-nav {
+        i {
+            margin-left: 30px;
+            margin-right: 0;
+        }
+
+        > div {
+            border-right: none;
+            border-left: 2px solid #fff;
+        }
+    }
+
+    .pagoL-table td, .pagoL-table th {
+        text-align: right;
+    }
+
+    #pagoL-table-checkouts .pagoL-title span:first-child {
+        float: right;
+        padding-right: 0;
+        padding-left: 10px;
+    }
+
+    .pagoL-table img {
+        margin-left: 15px;
+        margin-right: 0;
+    }
+
+    .pagoL-input > div {
+        padding-left: 30px;
+        padding-right: 0;
+    }
+
+    .pagoL-flex .pagoL-input + .pagoL-input {
+        margin: 0 15px 0 0 !important;
+    }
+
+    .pagoL-btn i {
+        margin-left: 15px;
+        margin-right: 0;
+    }
+
+    .pagoL-input .pagoL-icon-help {
+        margin: 0 5px 0 0;
+    }
+}
+
+/* 
+
+RESPONSIVE
+==========================================================
+
+*/
+
+@media (max-width: 1200px) {
+    .pagoL-admin .pagoL-input span {
+        max-width: 320px;
+        width: 320px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .pagoL-table tr:hover td {
+        background-color: $white;
+    }
+
+    .pagoL-admin .pagoL-input span {
+        max-width: 220px;
+        width: 220px;
+    }
+
+    .pagoL-transaction-details-list .pagoL-label {
+        display: none;
+    }
+
+    #pagoL-table-transactions {
+        tr, td {
+            width: auto !important;
+            max-width: 100% !important;
+            overflow: hidden;
+        }
+
+        td {
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+            justify-content: space-between;
+
+            .pagoL-label {
+                margin: 0 30px 0 0;
+                padding: 0;
+                border: none;
+                font-size: 13px;
+            }
+
+            .pagoL-title {
+                font-weight: 400;
+                font-size: 15px;
+            }
+
+            &:last-child {
+                border-bottom: none;
+                text-align: center;
+                padding: 15px;
+                overflow: visible;
+                display: block;
+                z-index: 95;
+            }
+        }
+
+        thead, td:empty {
+            display: none;
+        }
+
+        .pagoL-td-id {
+            font-size: 15px !important;
+        }
+
+        .pagoL-td-amount, .pagoL-td-id {
+            padding: 15px !important;
+        }
+
+        .pagoL-title {
+            span + span, & + .pagoL-text {
+                margin: 0 0 0 15px !important;
+                color: $color-black;
+                font-size: 15px;
+            }
+        }
+
+        .pagoL-title, .pagoL-td-title, .pagoL-td-amount {
+            display: flex;
+            align-items: center;
+        }
+
+        tr:nth-child(2n+1) td {
+            background: $background-gray;
+
+            .pagoL-transaction-menu-btn + .pagoL-ul {
+                background: $background-gray;
+            }
+        }
+
+        .pagoL-transaction-menu-btn {
+            position: static;
+            display: block;
+            margin: auto;
+            padding: 0;
+            width: 100%;
+
+            & + .pagoL-ul {
+                transform: none;
+                position: static;
+                box-shadow: none;
+                background: none;
+                margin: 0 -15px;
+                background: $white;
+
+                li {
+                    padding: 10px;
+                    font-size: 16px;
+                }
+            }
+
+            &:before {
+                transform: rotate(90deg);
+                display: inline-block;
+            }
+        }
+    }
+
+    .pagoL-setting-content {
+        max-width: 300px;
+        width: 300px;
+    }
+
+    .pagoL-rtl {
+        #pagoL-table-transactions {
+            .pagoL-title {
+                span + span, & + .pagoL-text {
+                    margin: 0 15px 0 0 !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    [data-name="data-license-key"] .pagoL-btn-text {
+        position: absolute;
+        top: -10px;
+        right: -15px;
+        background: white;
+        border: 10px solid $white;
+    }
+
+    [data-area="transactions"] > .pagoL-nav-wide .pagoL-btn-icon {
+        width: 43px;
+
+        i:before {
+            font-size: 21px;
+        }
+    }
+
+    .pagoL-btn {
+        font-size: 16px;
+        height: 43px;
+        line-height: 43px;
+    }
+
+    #pagoL-table-balances {
+        .pagoL-label {
+            overflow: hidden;
+            margin: 5px;
+            min-width: 21px;
+            max-width: 21px;
+            padding: 2px;
+        }
+
+        img {
+            max-height: 24px;
+            margin-right: 7px;
+        }
+
+        td:first-child {
+            overflow: hidden;
+        }
+    }
+
+    [data-area="transactions"] > .pagoL-nav-wide .pagoL-search {
+        flex-shrink: 1;
+    }
+
+    #pagoL-search-transactions {
+        min-width: 140px;
+    }
+
+    .pagoL-body {
+        padding: 80px 15px 15px 15px !important
+    }
+
+    .pagoL-sidebar, .pagoL-sidebar > div {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .pagoL-sidebar {
+        bottom: auto;
+        right: 0 !important;
+        left: 0 !important;
+        height: 55px;
+        width: auto;
+        border-right: none !important;
+        border-left: none !important;
+        border-bottom: 1px solid $border-color;
+
+        > div {
+            padding: 10px !important;
+            margin: 0;
+
+            &.pagoL-nav {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        }
+
+        .pagoL-logo {
+            display: none;
+        }
+
+        .pagoL-logo-icon {
+            display: block;
+            height: 35px;
+            max-height: 35px;
+        }
+
+        .pagoL-bottom {
+            right: 0 !important;
+            left: 0 !important;
+            width: auto;
+            text-align: center;
+
+            > .pagoL-btn {
+                margin: 0 auto 5px auto;
+            }
+        }
+    }
+
+    .pagoL-nav > div {
+        border: none !important;
+        width: 55px;
+        height: 55px;
+        border-radius: 4px;
+
+        i {
+            text-indent: 0;
+            margin: auto !important;
+            font-size: 25px;
+        }
+
+        span {
+            display: none !important;
+        }
+    }
+
+    .pagoL-mobile-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        font-size: 18px;
+
+        > i {
+            display: block;
+            width: 45px;
+            height: 55px;
+            line-height: 63px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        > div {
+            display: none;
+            background: $white;
+            padding: 15px;
+            position: fixed;
+            right: 10px;
+            top: 60px;
+            box-shadow: 0 4px 14px 0 rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .05);
+            border-radius: 5px;
+            text-align: center;
+            z-index: 9999995;
+            animation: pagoL-fade-bottom;
+
+            .pagoL-btn-icon {
+                margin: 5px auto -5px auto !important;
+            }
+        }
+
+        &.pagoL-active {
+            > i {
+                color: $color-main;
+            }
+
+            > div {
+                display: block;
+            }
+        }
+    }
+
+    .pagoL-admin main > div > .pagoL-loading {
+        bottom: -20px;
+    }
+
+    .pagoL-input input, .pagoL-input select, .pagoL-input textarea {
+        font-size: 15px;
+    }
+
+    .pagoL-input {
+        display: block;
+
+        span {
+            margin-bottom: 9px;
+            font-size: 17px;
+            max-width: 100% !important;
+            width: auto !important;
+            max-width: none;
+        }
+
+        > div {
+            padding-right: 0;
+            width: auto;
+
+            p {
+                font-size: 15px;
+                line-height: 25px;
+            }
+        }
+
+        .pagoL-setting-input {
+            margin-top: 15px;
+        }
+    }
+
+    .pagoL-flex .pagoL-input + .pagoL-input {
+        margin-top: 30px !important;
+    }
+
+    #pagoL-checkouts-form .pagoL-flex .pagoL-input + .pagoL-input {
+        margin-top: 50px !important;
+    }
+
+    [data-checkout-id] #pagoL-checkout-embed-code, [data-checkout-id] #pagoL-checkout-payment-link {
+        display: block;
+    }
+
+    [data-area="balance"] > div:first-child {
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    [data-type="multi-input"] > div {
+        padding-bottom: 15px;
+    }
+
+    [data-area="settings"] {
+        padding-bottom: 80px;
+    }
+
+    .pagoL-color-cnt {
+        i {
+            right: 12px;
+        }
+
+        &:after {
+            right: 1px;
+        }
+    }
+
+    #pagoL-checkout-embed-code div, #pagoL-checkout-payment-link div {
+        width: auto;
+    }
+
+    #pagoL-version {
+        margin-top: 13px;
+    }
+
+    .pagoL-rtl {
+        .pagoL-mobile-menu {
+            left: 0;
+            right: auto;
+
+            > div {
+                left: 10px;
+                right: auto;
+            }
+        }
+    }
+
+    #pagoL-table-transactions, #pagoL-table-checkouts {
+        margin-bottom: 60px;
+    }
+
+    #pagoL-table-transactions {
+        .pagoL-td-amount .pagoL-title {
+            margin: 0;
+        }
+
+        .pagoL-td-amount div + div {
+            margin: 0 0 0 15px;
+        }
+
+        .pagoL-not-found {
+            margin: 0;
+        }
+    }
+
+    #pagoL-table-checkouts {
+
+        tr:first-child td {
+            border-top: none;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+    }
+
+    #pagoL-checkouts-form {
+        .pagoL-input, .pagoL-flex {
+            border-top: none !important;
+        }
+
+        #checkout-downloads {
+            padding-right: 20px;
+        }
+    }
+
+    #pagoL-checkout-embed-code i, #pagoL-checkout-payment-link i, #pagoL-checkout-shortcode i {
+        margin-top: 32px;
+    }
+
+    .pagoL-login {
+        border: none;
+    }
+
+    .pagoL-login, .pagoL-cloud-box {
+        .pagoL-input {
+            margin-top: 15px;
+        }
+    }
+
+    #pagoL-balance-total {
+        font-size: 22px;
+
+        & + div {
+            font-size: 18px;
+        }
+    }
+
+    .pagoL-nav-filters {
+        position: absolute;
+        top: 50px;
+        padding: 0;
+        background: $white;
+        border-bottom: 1px solid $border-color;
+        z-index: 9;
+
+        .pagoL-input {
+            margin-right: 0;
+            display: flex;
+            justify-content: start;
+            margin: 15px 0;
+        }
+
+        > .pagoL-select {
+            display: block;
+            margin: 0;
+
+            p, li {
+                font-size: 17px !important;
+            }
+        }
+
+        &.pagoL-active {
+            display: block;
+            left: 0;
+            right: 0;
+            padding-bottom: 15px;
+            z-index: 96;
+        }
+
+        > div:last-child {
+            margin-bottom: 15px;
+        }
+
+        .pagoL-filter-checkout > p {
+            max-width: 100%;
+        }
+    }
+
+    input {
+        &.pagoL-filter-date, &.pagoL-filter-date-2 {
+            width: 50%;
+            text-align: left;
+        }
+    }
+
+    [data-area="analytics"] {
+        .pagoL-nav-wide > .pagoL-flex {
+            width: 100%;
+        }
+
+        .pagoL-nav-filters:not(.pagoL-active) {
+            display: none;
+        }
+
+        #pagoL-filters {
+            display: block;
+            margin-left: auto;
+        }
+    }
+}

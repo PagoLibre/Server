@@ -1,0 +1,100 @@
+/*
+* 
+* ==========================================================
+* ICONS.SCSS
+* ==========================================================
+*
+* Icons file shared by admin and client
+*
+*/
+@font-face {
+  font-family: 'PagoLibre Icons';
+  src: url("../media/fonts/icons.ttf?v1") format("truetype"), url("../media/fonts/icons.woff?v1") format("woff"), url("../media/fonts/icons.svg?v1#PagoLibre-Icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+[class^="pagoL-icon-"]:before,
+[class*=" pagoL-icon-"]:before {
+  font-family: "PagoLibre Icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.pagoL-icon-copy:before {
+  content: "\e90d"; }
+
+.pagoL-icon-back:before {
+  content: "\e90c"; }
+
+.pagoL-icon-search:before {
+  content: "\e90b"; }
+
+.pagoL-icon-shuffle:before {
+  content: "\e904"; }
+
+.pagoL-icon-automation:before {
+  content: "\e905"; }
+
+.pagoL-icon-bar-chart:before {
+  content: "\e906"; }
+
+.pagoL-icon-delete:before {
+  content: "\e907"; }
+
+.pagoL-icon-menu:before {
+  content: "\e908"; }
+
+.pagoL-icon-plus-2:before {
+  content: "\e909"; }
+
+.pagoL-icon-settings:before {
+  content: "\e90a"; }
+
+.pagoL-icon-close:before {
+  content: "\e903"; }
+
+.pagoL-icon-help:before {
+  content: "\e902"; }
+
+.pagoL-icon-check:before {
+  content: "\e901"; }
+
+.pagoL-icon-loader:before {
+  content: "\e900"; }
+
+.pagoL-icon-download:before {
+  content: "\66"; }
+
+.pagoL-icon-clip:before {
+  content: "\65"; }
+
+.pagoL-icon-filters:before {
+  content: "\e90e"; }
+
+.pagoL-icon-arrow-down:before {
+  content: "\61"; }
+
+.pagoL-icon-user:before {
+  content: "\6e"; }
+
+.pagoL-icon-arrow-right:before {
+  content: "\ea3c"; }
+
+.pagoL-icon-arrow-left:before {
+  content: "\ea40"; }
+
+.pagoL-icon-clock:before {
+  content: "\46"; }
+
+.pagoL-icon-calendar:before {
+  content: "\62"; }
+
+.pagoL-icon-image:before {
+  content: "\e90f"; }
+
+/*# sourceMappingURL=icons.css.map */

@@ -1,0 +1,882 @@
+
+/*
+* 
+* ==========================================================
+* SHARED.SCSS
+* ==========================================================
+*
+* File shared by both admin and client
+*
+*/
+
+$transition: all 0.4s;
+$color-main: #2bb0ba;
+$color-main-hover: #2bcbd7;
+$color-black: #464646;
+$color-gray: #5c7171;
+$color-red: rgb(202, 52, 52);
+$color-red-hover: #e43c3b;
+$color-green: rgb(26, 146, 96);
+$color-orange: rgb(246, 158, 0);
+$background-gray: #f5fafa;
+$background-main-light: rgba(39, 255, 222, 0.08);
+$background-red: rgba(202, 52, 52, 0.1);
+$background-yellow: rgb(242, 227, 124);
+$background-green: rgb(177, 230, 208);
+$border-color: rgb(212, 212, 212);
+$white: #fff;
+$box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.05);
+
+@import "icons.scss";
+
+@font-face {
+    font-family: "PagoLibre";
+    src: url("../media/fonts/regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PagoLibre";
+    src: url("../media/fonts/medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PagoLibre";
+    src: url("../media/fonts/bold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@keyframes pagoL-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pagoL-fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pagoL-fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes pagoL-fade-bottom {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@keyframes pagoL-fade-bottom-center {
+    0% {
+        transform: translateY(15px) translateX(-50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-50%);
+        opacity: 1;
+    }
+}
+
+
+@keyframes pagoL-pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pagoL-ping {
+    0% {
+        transform: scale(0.2);
+        opacity: 0.8;
+    }
+
+    80% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+/* 
+
+# GLOBAL
+==========================================================
+
+*/
+
+.pagoL-main, .pagoL-main input, .pagoL-main select, .pagoL-main textarea, .pagoL-btn, button, .pagoL-box, #pagoL-lightbox {
+    font-family: "PagoLibre", "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.pagoL-main {
+    * {
+        box-sizing: content-box;
+        outline: none;
+    }
+
+    input, input[text], textarea, input[email] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill {
+        box-shadow: 0 0 0 30px $background-gray inset !important;
+    }
+
+    input:-webkit-autofill:focus, select:-webkit-autofill:focus {
+        box-shadow: 0 0 0 30px $white inset !important;
+    }
+
+    input:-autofill, select:-autofill {
+        box-shadow: 0 0 0 30px $background-gray inset !important;
+    }
+
+    input:autofill:focus, select:autofill:focus {
+        box-shadow: 0 0 0 30px $white inset !important;
+    }
+}
+
+.pagoL-loading, [data-pagoL]:empty, .pagoL-select p, .pagoL-btn-main {
+    &:before {
+        font-family: "PagoLibre Icons";
+        font-style: normal;
+        font-weight: normal;
+        text-transform: none;
+        text-indent: 0;
+        position: absolute;
+        z-index: 1;
+    }
+}
+
+.pagoL-loader:before {
+    content: "\e900";
+}
+
+.pagoL-loading, [data-pagoL]:empty {
+    position: relative;
+    text-indent: -999995px;
+    overflow: hidden;
+
+    i {
+        display: none;
+    }
+
+    &:before {
+        content: "\e900";
+        animation: pagoL-loading 0.6s linear infinite;
+        display: block;
+        width: 30px;
+        height: 30px;
+        line-height: 29px;
+        font-size: 21px;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        margin-top: -15px;
+        margin-left: -15px;
+        color: $color-main;
+    }
+
+    div, ul, h1, h2, h3, h4, p, span, table, a {
+        opacity: 0;
+    }
+}
+
+.pagoL-btn.pagoL-loading {
+    img {
+        display: none !important;
+    }
+
+    &:before {
+        color: $white;
+    }
+}
+
+.pagoL-hidden {
+    position: absolute !important;
+    width: 0 !important;
+    max-width: 0 !important;
+    min-width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    padding: 0 !important;
+}
+
+.pagoL-scrollbar {
+    overflow-y: scroll !important;
+    scrollbar-color: #ced6db #ced6db;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #ced6db;
+        border-radius: 6px;
+        transition: $transition;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #A0A0A0;
+    }
+}
+
+/* 
+
+# TYPOGRAPHY
+==========================================================
+
+*/
+
+.pagoL-title {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 600;
+    margin: 0;
+
+    & + .pagoL-text:not(:empty) {
+        margin-top: 15px;
+    }
+}
+
+.pagoL-text {
+    font-size: 15px;
+    line-height: 25px;
+    color: $color-gray;
+    letter-spacing: .2px;
+}
+
+/* 
+
+# ELEMENTS
+==========================================================
+
+*/
+
+.pagoL-select ul, .pagoL-ul {
+    padding: 10px 0 !important;
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    margin: 0;
+    background: $white;
+    border-radius: 4px;
+    padding: 10px 0;
+    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .05);
+    list-style: none;
+    z-index: 9999995;
+
+    &.pagoL-active {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    li {
+        cursor: pointer;
+        padding: 6px 25px 6px 12px;
+        margin: 0;
+        font-weight: 500;
+        font-size: 13px;
+        letter-spacing: .3px;
+        line-height: 20px;
+        white-space: nowrap;
+        list-style: none;
+        transition: all 0.1s;
+
+        &.pagoL-active, .pagoL-label div {
+            display: none;
+        }
+
+        .pagoL-label {
+            transition: none;
+        }
+
+        &:hover, &:hover .pagoL-label {
+            background-color: $color-main;
+            color: $white;
+            border-color: $white;
+        }
+    }
+}
+
+.pagoL-select {
+    position: relative;
+    color: $color-black;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    display: inline-block;
+
+    p {
+        position: relative;
+        padding: 0 20px 0 0;
+        margin: 0;
+        cursor: pointer;
+        font-weight: 500;
+        letter-spacing: .3px;
+        font-size: 13px !important;
+        line-height: 35px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: $transition;
+
+        span {
+            font-weight: 400;
+            opacity: 0.7;
+        }
+
+        .pagoL-label {
+            border: none;
+            margin: 0;
+            font-size: 13px;
+            line-height: 35px;
+            padding: 0;
+            opacity: 1;
+            font-weight: 500;
+
+            div {
+                display: none;
+            }
+        }
+
+        &:before {
+            content: "\61";
+            top: 0;
+            right: 1px;
+            font-size: 9px;
+            line-height: 35px;
+        }
+
+        &:hover, &:hover span {
+            color: $color-main;
+        }
+    }
+
+    &.pagoL-loading {
+        overflow: visible;
+    }
+
+    &.pagoL-right ul {
+        right: 0;
+    }
+
+    & + .pagoL-select {
+        margin-left: 20px;
+    }
+}
+
+.pagoL-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    span {
+        display: block;
+        width: 150px;
+        min-width: 150px;
+        flex-grow: 1;
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: 0.3px;
+        color: $color-black;
+    }
+
+    input,
+    select,
+    textarea {
+        position: static;
+        border-radius: 4px !important;
+        color: $color-black;
+        font-size: 13px;
+        line-height: 35px;
+        font-weight: 400;
+        border: 1px solid $border-color;
+        background-color: $background-gray;
+        outline: none;
+        height: 42px;
+        min-height: 42px;
+        min-width: 200px;
+        max-width: none;
+        padding: 0 10px;
+        transition: all 0.4s;
+        width: 100%;
+        margin: 0 !important;
+        box-sizing: border-box;
+        box-shadow: none;
+
+        &:focus, &.pagoL-focus {
+            border: 1px solid $color-main;
+            box-shadow: 0 0 5px rgba(39, 255, 222, 0.20);
+            background: $white;
+            color: $color-black;
+            outline: none !important;
+        }
+    }
+
+    select {
+        min-height: 37px;
+    }
+
+    textarea {
+        line-height: 20px;
+        min-height: 75px;
+        padding: 8px 10px;
+    }
+
+    > div {
+        padding-right: 30px;
+        max-width: 800px;
+
+        p, p a {
+            font-size: 13px;
+            line-height: 22px;
+            letter-spacing: 0.3px;
+            margin: 5px 0 0 0;
+            color: $color-gray;
+            font-weight: 400;
+
+            a {
+                margin: 0 0 0 5px;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    input[type="checkbox"] {
+        background: $white;
+        clear: none;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 0;
+        height: 42px;
+        min-height: 42px;
+        width: 42px;
+        min-width: 42px;
+        outline: 0;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        vertical-align: middle;
+        outline: none;
+        box-shadow: none;
+        background-color: $background-gray;
+        -webkit-appearance: none;
+    }
+
+    input[type="checkbox"]:checked:before {
+        content: "\e901" !important;
+        font-family: "PagoLibre Icons" !important;
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-variant: normal !important;
+        text-transform: none !important;
+        line-height: 42px;
+        font-size: 15px;
+        color: $color-main;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    & + .pagoL-input {
+        margin-top: 10px;
+    }
+
+    &.pagoL-error input, &.pagoL-error select, &.pagoL-error textarea {
+        border: 1px solid $color-red;
+        box-shadow: 0 0 5px rgba(202, 52, 52, 0.25);
+    }
+}
+
+.pagoL-input-btn {
+    .pagoL-btn {
+        margin-left: 15px;
+        border-radius: 4px;
+        height: 39px !important;
+        line-height: 39px !important;
+        flex: 0 0 auto;
+
+        &:not(:hover) {
+            border-color: #d4d4d4;
+        }
+
+        &.pagoL-loading:before {
+            color: $color-main;
+        }
+    }
+}
+
+.pagoL-label, .pagoL-admin .pagoL-input span.pagoL-label {
+    display: inline-block;
+    width: auto;
+    min-width: 0;
+    margin: 0 15px;
+    border: 1px solid $color-gray;
+    color: $color-gray;
+    font-size: 11px;
+    line-height: 11px;
+    padding: 3px 7px;
+    font-weight: 500;
+    border-radius: 4px;
+    letter-spacing: .2px;
+    white-space: nowrap;
+    transition: color .4s, border-color .4s, background-color .4s;
+}
+
+.pagoL-clipboard {
+    cursor: pointer;
+    z-index: 2;
+    transition: $transition;
+
+    &:hover {
+        color: $color-main-hover;
+    }
+}
+
+.pagoL-toolip-cnt {
+    position: relative;
+    overflow: visible !important;
+
+    &:hover, &.pagoL-active {
+        .pagoL-toolip {
+            display: block !important;
+            animation: pagoL-fade-bottom-center 1s;
+        }
+    }
+}
+
+.pagoL-toolip {
+    position: absolute;
+    display: none !important;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 400 !important;
+    font-style: normal;
+    white-space: nowrap;
+    letter-spacing: .2px;
+    font-size: 13px !important;
+    line-height: 20px;
+    z-index: 995;
+    background: $color-black;
+    border-radius: 30px;
+    padding: 3px 12px;
+    color: $white !important;
+    margin-top: -40px;
+    min-width: 0 !important;
+    max-width: none !important;
+    width: auto !important;
+    text-align: center;
+
+    &:after {
+        position: absolute;
+        bottom: -3px;
+        left: 50%;
+        transform: translate(-50%, 8px);
+        content: " ";
+        border-width: 6px;
+        border-style: solid;
+        border-color: $color-black transparent transparent;
+    }
+}
+
+.pagoL-info {
+    font-size: 13px;
+    line-height: 20px;
+    color: $white;
+    background-color: $color-red;
+    right: 0;
+    left: 0;
+    top: 0;
+    margin: 0 0 40px 0;
+    padding: 15px 20px;
+    border-radius: 4px;
+    display: none;
+
+    &:not(:empty) {
+        display: block;
+        animation: pagoL-fade-animation 0.4s;
+    }
+}
+
+.pagoL-btn {
+    font-size: 14px;
+    line-height: 39px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    border-radius: 30px;
+    min-width: 0;
+    background-color: $color-main;
+    text-decoration: none;
+    color: $white;
+    height: 38px;
+    padding: 0 25px;
+    position: relative;
+    display: inline-block;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: color .4s, background-color .4s, border-color .4s, opacity .4s;
+
+    i {
+        margin-right: 15px;
+        font-size: 17px;
+        transform: translateY(1px);
+        display: inline-block;
+        font-weight: 400;
+        line-height: 0;
+        transform: translateY(3px);
+        margin: 0 7px 0 -5px;
+    }
+
+    &.pagoL-btn-border {
+        background: none !important;
+        border: 1px solid $color-gray;
+        color: $color-gray;
+        height: 36px;
+        line-height: 37px;
+
+        &:hover,
+        &:active {
+            color: $color-main;
+            border-color: $color-main;
+        }
+    }
+
+    &.pagoL-btn-img {
+        padding-left: 43px;
+        padding-right: 15px;
+
+        img {
+            position: absolute;
+            height: 18px;
+            left: 16px;
+            top: 7px;
+        }
+    }
+
+    &:hover,
+    &:active {
+        background-color: $color-main-hover;
+        color: $white;
+    }
+
+    & + .pagoL-btn {
+        margin-left: 15px;
+    }
+
+    &.pagoL-disabled {
+        background-color: #e3ebeb !important;
+        color: #aeb7b7 !important;
+        cursor: not-allowed !important;
+    }
+}
+
+.pagoL-btn-icon {
+    position: relative;
+    cursor: pointer;
+    width: 33px;
+    height: 33px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    opacity: 0.8;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    transition: $transition;
+    text-decoration: none !important;
+    overflow: hidden;
+    color: $color-black;
+
+    i {
+        line-height: 33px;
+        font-size: 18px;
+        width: 33px;
+
+        &:before {
+            font-size: 18px;
+            line-height: 35px;
+        }
+    }
+
+    &:before {
+        font-size: 23px;
+        line-height: 35px;
+    }
+
+    &.pagoL-loading:before {
+        line-height: 30px;
+    }
+
+    &:hover {
+        opacity: 1;
+        border-color: $color-main;
+        color: $color-main;
+        background-color: $background-main-light;
+    }
+}
+
+.pagoL-btn-text {
+    cursor: pointer;
+    transition: $transition;
+
+    i {
+        margin-right: 15px;
+        display: inline-block;
+    }
+
+    &:hover {
+        color: $color-main;
+    }
+}
+
+.pagoL-btn-red {
+    &:hover {
+        border-color: $color-red !important;
+        color: $color-red !important;
+        background-color: $background-red !important;
+
+        i {
+            color: $color-red !important;
+        }
+    }
+
+    &.pagoL-loading:before {
+        color: $color-red;
+    }
+
+    &.pagoL-link {
+        &:hover:after {
+            background-color: $color-red !important;
+        }
+
+        &:hover {
+            background-color: transparent !important;
+        }
+    }
+}
+
+.pagoL-link, .pagoL-underline {
+    cursor: pointer;
+    letter-spacing: .5px;
+    transition: $transition;
+
+    &:hover,
+    &:active {
+        color: $color-main;
+    }
+}
+
+.pagoL-underline {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        transition: $transition;
+        background-color: $border-color;
+    }
+
+    &:hover:after {
+        background-color: $color-main;
+    }
+}
+
+.pagoL-box {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 45px;
+    border-radius: 6px;
+    border: 1px solid $border-color;
+    background: $white;
+    position: relative;
+
+    & + .pagoL-box {
+        margin-top: 15px;
+    }
+}
+
+.pagoL-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    .pagoL-input + .pagoL-input {
+        margin: 0 0 0 15px !important;
+        padding-top: 0 !important;
+        border: none !important;
+    }
+}
+
+hr {
+    border: none;
+    background: none;
+    display: block;
+    clear: both;
+    height: 30px;
+}
